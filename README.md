@@ -56,6 +56,10 @@ De son côté, le jeu en ligne gagne du terrain avec plus d'un tiers des joueurs
 
 > 7. **Quel est le niveau des joueurs dans le jeu (noob, expert, champion, god...) ?**
 
+Dans les jeux compétitifs, des systèmes de classement des joueurs ont été mis en place. Ces systèmes sont souvent inspirés du système de clasemenent Elo (très connu aux échecs) dans lequel les joueurs gagnent des points lorsqu'ils battent un joueur mieux classé et d'autant plus lorsque l'écart est important.
+L'intérêt des classements est de faire s'affronter des joueurs de niveau équivalent.
+
+Dans les jeux non compétitifs, le niveau des joueurs sera plutôt considéré comme dépendant du temps de jeu et donc de l'expérience du joueur sur le jeu. Cette méthode n'est toutefois pas une garantie.
 
 
 > 8. **Comment évaluer un joueur pour signaler les "rageux" en ligne ?**
