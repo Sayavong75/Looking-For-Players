@@ -1,0 +1,1 @@
+insert into player(id,username) values (1,'Saya');
