@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { PlayerProfileComponent } from './player-profile/player-profile.component';
 import { NewSessionComponent } from './new-session/new-session.component';
 import { SessionListComponent } from './sessions-list/session-list.component';
+import { FooterComponent } from './footer/footer.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { SessionListComponent } from './sessions-list/session-list.component';
     HomeComponent,
     PlayerProfileComponent,
     NewSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    FooterComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,94 @@
-/* You can add global styles to this file, and also import other style files */
+/*GLOBAL PAGE*/
+#page {
+  background-color: darkgoldenrod;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+/*TOP-BAR*/
+
+app-top-bar {
+  display: flex;
+  width: 100%;
+}
+
+/*Login area*/
+.login {
+  width: 150px;
+  height: 70px;
+  padding: 20px 5px 20px 15px;
+}
+
+.login-btn {
+  height: 50px;
+  width: 100px;
+  font-size: 20px;
+}
+
+.login-btn:hover {
+  height: 52px;
+  width: 102px;
+}
+
+.logo-zone {
+  width: 100vw;
+  height: 70px;
+  text-align: center;
+}
+
+/*Logo area*/
+.logo {
+  text-decoration: none;
+  color: black;
+  font-style: oblique;
+  text-shadow: 2px 2px grey;
+}
+
+/*Display under top-bar*/
+.under-top-bar {
+  flex-grow: 1;
+  display: flex;
+}
+
+/*NAVBAR*/
+/*Menu*/
+.left-bar {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+/*CONTENT*/
+
+main {
+  background-color: saddlebrown;
+  border: solid black 3px;
+  flex-grow: 1;
+  height: 40vw;
+  margin: 5px 0px 5px 15px;
+  padding: 5px;
+}
+
+
+/*FOOTER*/
+
+.footer{
+}
+
+.footer-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  font-style: oblique;
+}
+
+.guigui-logo{
+  padding-top: 15px;
+  width: 20px;
+  align-self: baseline;
+  margin-left: 0.5vw;
+}
