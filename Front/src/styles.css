@@ -65,7 +65,7 @@ app-top-bar {
 /*CONTENT*/
 
 main {
-  background-color: saddlebrown;
+  background-color: white;
   border: solid black 3px;
   flex-grow: 1;
   height: 40vw;
