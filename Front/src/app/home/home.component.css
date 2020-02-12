@@ -18,3 +18,7 @@ td, th /* Toutes les cellules des tableaux... */
 div {
   text-align: center;
 }
+
+h1, h3 {
+  text-align: center;
+}
