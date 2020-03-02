@@ -4,6 +4,7 @@ import co.simplon.lfpapi.model.Game;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public interface GameService {
@@ -17,5 +18,6 @@ public interface GameService {
 
     Game addGame(Game gameToAdd);
 
+    Game getGame(Long id);
 
 }
