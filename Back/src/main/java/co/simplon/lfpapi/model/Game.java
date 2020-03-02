@@ -34,4 +34,19 @@ public class Game {
         return imageUrlGame;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setIdSteam(String idSteam) {
+        this.idSteam = idSteam;
+    }
+
+    public void setNameGame(String nameGame) {
+        this.nameGame = nameGame;
+    }
+
+    public void setImageUrlGame(String imageUrlGame) {
+        this.imageUrlGame = imageUrlGame;
+    }
 }

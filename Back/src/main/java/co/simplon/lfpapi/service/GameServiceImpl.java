@@ -5,6 +5,7 @@ import co.simplon.lfpapi.repository.GameRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GameServiceImpl implements GameService {
@@ -21,6 +22,11 @@ public class GameServiceImpl implements GameService {
     @Override
     public Game addGame(Game gameToAdd) {
         return gameRepository.save(gameToAdd);
+    }
+
+    @Override
+    public Game getGame(Long id) {
+        return gameRepository.getOne(id);
     }
 
 }
