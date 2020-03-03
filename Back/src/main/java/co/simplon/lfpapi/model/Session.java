@@ -1,6 +1,8 @@
 package co.simplon.lfpapi.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.Set;
 
@@ -11,9 +13,13 @@ public class Session {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @NotNull
+    @NotBlank
+    @Column(nullable = false)
     private Date dateOfGamingSession;
 
+    @NotNull
+    @NotBlank
     @ManyToOne
     private Game game;
 
@@ -21,6 +27,7 @@ public class Session {
     /*@ManyToMany(mappedBy = "sessions")
     private Set<Player> players;*/
 
+    @NotNull
     @Column
     private Integer rating;
 
