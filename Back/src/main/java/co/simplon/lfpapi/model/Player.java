@@ -1,6 +1,7 @@
 package co.simplon.lfpapi.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Player {
@@ -12,14 +13,10 @@ public class Player {
     @Column
     private String username;
 
-    public Player (Long id, String username){
-        this.id = id;
-        this.username = username;
-    }
+    //relation unidirectionnelle
+    @ManyToMany
+    private Set<Session> sessions;
 
-    public Player (){
-
-    }
 
     public Long getId() {
         return id;

@@ -45,6 +45,5 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public void deletePlayer(Long idPlayer) {
         this.playerRepository.deleteById(idPlayer);
-
     }
 }
