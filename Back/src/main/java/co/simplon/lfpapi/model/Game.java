@@ -5,22 +5,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Game {
     @Id
-    @SequenceGenerator(name = "game_seq_id", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "game_seq_id")
+    /*@SequenceGenerator(name = "game_seq_id", allocationSize = 1)*/
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+git
     @Column(nullable = false)
     private Long idSteam;
 
     @Column(nullable = false)
     private String nameGame;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "img_url_game")
     private String imageUrlGame;
+
+    @OneToMany
+    private Set<Session> sessions;
+
 
     public Long getId() {
         return id;

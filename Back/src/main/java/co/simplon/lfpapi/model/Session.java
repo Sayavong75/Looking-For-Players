@@ -20,8 +20,10 @@ public class Session {
 
     @NotNull
     @NotBlank
-    @ManyToOne
-    private Game game;
+
+    //Relation unidirectionnelle donc rien à mettre dans la class Session
+    /*@ManyToOne
+    private Game game;*/
 
     //Relation unidirectionnelle donc rien à mettre dans la class Session
     /*@ManyToMany(mappedBy = "sessions")
