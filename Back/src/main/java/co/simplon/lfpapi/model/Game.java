@@ -13,7 +13,7 @@ public class Game {
     /*@SequenceGenerator(name = "game_seq_id", allocationSize = 1)*/
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-git
+
     @Column(nullable = false)
     private Long idSteam;
 

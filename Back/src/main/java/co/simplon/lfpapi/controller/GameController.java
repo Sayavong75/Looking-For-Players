@@ -3,8 +3,6 @@ package co.simplon.lfpapi.controller;
 import co.simplon.lfpapi.model.Game;
 import co.simplon.lfpapi.repository.GameRepository;
 import co.simplon.lfpapi.service.GameService;
-import io.swagger.annotations.ApiParam;
-import javafx.scene.effect.Reflection;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,10 +34,10 @@ public class GameController {
 
     @GetMapping
     public Page<Game> getGames(
-            @ApiParam(value = "Query param for 'pageNumber'") @Valid @RequestParam(value = "pageNumber", required = false) Integer pageNumber,
-            @ApiParam(value = "Query param for 'pageSize'") @Valid @RequestParam(value = "pageSize", required = false) Integer pageSize,
-            @ApiParam(value = "Query param for 'sort' criteria") @Valid @RequestParam(value = "sort", required = false) String criteria,
-            @ApiParam(value = "Query param for 'sort' direction") @Valid @RequestParam(value = "direction", required = false) String direction) {
+            @Valid @RequestParam(value = "pageNumber", required = false) Integer pageNumber,
+            @Valid @RequestParam(value = "pageSize", required = false) Integer pageSize,
+            @Valid @RequestParam(value = "sort", required = false) String criteria,
+            @Valid @RequestParam(value = "direction", required = false) String direction) {
 
         return gameService.getGames(pageNumber, pageSize, criteria, direction);
     }
