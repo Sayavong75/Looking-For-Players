@@ -1,6 +1,10 @@
 package co.simplon.lfpapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Game {
@@ -10,7 +14,7 @@ public class Game {
     private Long id;
 
     @Column(nullable = false)
-    private String idSteam;
+    private Long idSteam;
 
     @Column(nullable = false)
     private String nameGame;
@@ -22,7 +26,7 @@ public class Game {
         return id;
     }
 
-    public String getIdSteam() {
+    public Long getIdSteam() {
         return idSteam;
     }
 
@@ -38,7 +42,7 @@ public class Game {
         this.id = id;
     }
 
-    public void setIdSteam(String idSteam) {
+    public void setIdSteam(Long idSteam) {
         this.idSteam = idSteam;
     }
 
