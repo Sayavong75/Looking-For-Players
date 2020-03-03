@@ -24,6 +24,11 @@ public class Game {
     private String imageUrlGame;
 
     @OneToMany
+    @JoinTable(
+            name = "game_sessions",
+            joinColumns = @JoinColumn(name="game_idx"),
+            inverseJoinColumns = @JoinColumn(name="session_idx")
+    )
     private Set<Session> sessions;
 
 
