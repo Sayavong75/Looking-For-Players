@@ -23,6 +23,7 @@ public class Game {
     @Column(nullable = false, name = "img_url_game")
     private String imageUrlGame;
 
+    @JsonIgnore
     @OneToMany
     @JoinTable(
             name = "game_sessions",
@@ -31,6 +32,7 @@ public class Game {
     )
     private Set<Session> sessions;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "games")
     private Set<Player> players;
 
@@ -73,5 +75,13 @@ public class Game {
 
     public void setSessions(Set<Session> sessions) {
         this.sessions = sessions;
+    }
+
+    public Set<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(Set<Player> players) {
+        this.players = players;
     }
 }
