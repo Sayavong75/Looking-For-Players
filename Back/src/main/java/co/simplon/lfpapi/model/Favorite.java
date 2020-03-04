@@ -2,7 +2,7 @@ package co.simplon.lfpapi.model;
 
 import javax.persistence.*;
 
-public class Favori {
+public class Favorite {
     @Id
     /*@SequenceGenerator(name = "favori_seq_id", allocationSize = 1)*/
     @GeneratedValue(strategy = GenerationType.IDENTITY) //.SEQUENCE, generator = "favori_seq_id")
