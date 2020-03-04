@@ -28,8 +28,8 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public Player savePlayer(Player player) {
-        Optional<Player> playerInBase = this.playerRepository.findById(player.getId());
+    public Player savePlayer(Long idPlayer, Player player) {
+        Optional<Player> playerInBase = this.playerRepository.findById(idPlayer);
         if (playerInBase.isPresent()){
             return this.playerRepository.save(player);
         } else {

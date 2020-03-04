@@ -29,10 +29,10 @@ public class PlayerController {
         return this.playerService.getOnePlayer(idPlayer);
     }
 
-    @PutMapping
-        public ResponseEntity<Player> updatePlayer(@RequestBody Player player){
+    @PutMapping("/{idPlayer}")
+        public ResponseEntity<Player> updatePlayer(@PathVariable Long idPlayer, @RequestBody Player player){
         try {
-            return ResponseEntity.ok(this.playerService.savePlayer(player));
+            return ResponseEntity.ok(this.playerService.savePlayer(idPlayer, player));
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }
