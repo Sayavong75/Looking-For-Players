@@ -10,8 +10,8 @@ import java.util.Set;
 @Entity
 public class Game {
     @Id
-    /*@SequenceGenerator(name = "game_seq_id", allocationSize = 1)*/
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "game_id_seq")
+    @SequenceGenerator(name="game_id_seq", sequenceName = "game_id_seq", allocationSize = 1)
     private Long id;
 
     @Column(nullable = false)
