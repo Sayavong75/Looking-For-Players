@@ -1,5 +1,6 @@
 package co.simplon.lfpapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -12,7 +13,8 @@ import java.util.Set;
 public class Session {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "session_id_seq")
+    @SequenceGenerator(name = "session_id_seq", sequenceName = "session_id_seq", allocationSize = 1)
     private Long id;
 
     @NotNull
@@ -21,21 +23,48 @@ public class Session {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date dateOfGamingSession;
 
-    @NotNull
-    @NotBlank
-
-    //Relation unidirectionnelle donc rien à mettre dans la class Session
-    /*@ManyToOne
-    private Game game;*/
-
-    //Relation unidirectionnelle donc rien à mettre dans la class Session
-    /*@ManyToMany(mappedBy = "sessions")
-    private Set<Player> players;*/
-
-    @NotNull
-    @Column
-    private Integer rating;
 
 
+    //Relation bidirectionnelle
+    /*@JsonIgnore*/
+    @ManyToOne
+    private Game game;
 
+    //Relation bidirectionnelle
+    @JsonIgnore
+    @ManyToMany(mappedBy = "sessions")
+    private Set<Player> players;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getDateOfGamingSession() {
+        return dateOfGamingSession;
+    }
+
+    public void setDateOfGamingSession(Date dateOfGamingSession) {
+        this.dateOfGamingSession = dateOfGamingSession;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Set<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(Set<Player> players) {
+        this.players = players;
+    }
 }

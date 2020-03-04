@@ -23,6 +23,7 @@ public class Game {
     @Column(nullable = false, name = "img_url_game")
     private String imageUrlGame;
 
+    @JsonIgnore
     @OneToMany
     @JoinTable(
             name = "game_sessions",
@@ -30,6 +31,10 @@ public class Game {
             inverseJoinColumns = @JoinColumn(name="session_idx")
     )
     private Set<Session> sessions;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "games")
+    private Set<Player> players;
 
 
     public Long getId() {
@@ -62,5 +67,21 @@ public class Game {
 
     public void setImageUrlGame(String imageUrlGame) {
         this.imageUrlGame = imageUrlGame;
+    }
+
+    public Set<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(Set<Session> sessions) {
+        this.sessions = sessions;
+    }
+
+    public Set<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(Set<Player> players) {
+        this.players = players;
     }
 }

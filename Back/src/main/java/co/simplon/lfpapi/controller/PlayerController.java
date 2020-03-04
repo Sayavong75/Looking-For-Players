@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/player")
+@RequestMapping("/api/players")
 @CrossOrigin("http://localhost:4200")
 public class PlayerController {
 
