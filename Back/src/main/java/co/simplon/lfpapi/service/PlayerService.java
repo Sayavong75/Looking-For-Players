@@ -11,7 +11,7 @@ public interface PlayerService {
 
     Player getOnePlayer(Long idPlayer);
     List<Player> getAllPlayers();
-    Player savePlayer(Player player);
+    Player savePlayer(Long idPlayer, Player player);
     Player createPlayer(Player player);
     void deletePlayer(Long idPlayer);
 }
