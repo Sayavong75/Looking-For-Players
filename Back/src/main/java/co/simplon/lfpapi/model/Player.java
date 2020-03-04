@@ -18,6 +18,9 @@ public class Player {
     @ManyToMany
     private Set<Session> sessions;
 
+    @ManyToMany
+    private Set<Game> games;
+
 
     public Long getId() {
         return id;
@@ -41,5 +44,13 @@ public class Player {
 
     public void setSessions(Set<Session> sessions) {
         this.sessions = sessions;
+    }
+
+    public Set<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(Set<Game> games) {
+        this.games = games;
     }
 }

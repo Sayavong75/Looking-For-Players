@@ -24,13 +24,13 @@ public class Session {
 
 
 
-    //Relation unidirectionnelle donc rien à mettre dans la class Session
-    /*@ManyToOne
-    private Game game;*/
+    //Relation bidirectionnelle
+    @ManyToOne
+    private Game game;
 
-    //Relation unidirectionnelle donc rien à mettre dans la class Session
-   /* @ManyToMany(mappedBy = "sessions")
-    private Set<Player> players;*/
+    //Relation bidirectionnelle
+    @ManyToMany(mappedBy = "sessions")
+    private Set<Player> players;
 
     @NotNull
     @Column
@@ -59,5 +59,13 @@ public class Session {
 
     public void setRating(Integer rating) {
         this.rating = rating;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
     }
 }

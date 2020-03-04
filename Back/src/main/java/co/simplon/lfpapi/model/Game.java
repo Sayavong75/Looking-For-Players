@@ -31,6 +31,9 @@ public class Game {
     )
     private Set<Session> sessions;
 
+    @ManyToMany(mappedBy = "games")
+    private Set<Player> players;
+
 
     public Long getId() {
         return id;

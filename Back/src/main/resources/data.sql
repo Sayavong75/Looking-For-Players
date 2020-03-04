@@ -10,10 +10,14 @@ insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_i
 insert into session (id, date_of_gaming_session, rating) values (nextval('session_id_seq'),'04/03/2020',5);
 insert into session (id, date_of_gaming_session, rating) values (nextval('session_id_seq'),'18/02/2020',3);
 
-insert into player_sessions (player_id, sessions_id) values (1,1);
-insert into player_sessions (player_id, sessions_id) values (2,1);
-insert into player_sessions (player_id, sessions_id) values (1,2);
+insert into player_sessions (players_id, sessions_id) values (1,1);
+insert into player_sessions (players_id, sessions_id) values (2,1);
+insert into player_sessions (players_id, sessions_id) values (1,2);
 
 insert into game_sessions (game_idx, session_idx) values (1,1);
+insert into game_sessions (game_idx, session_idx) values (1,2);
+
+insert into player_games (players_id, games_id) values (1,1);
+insert into player_games (players_id, games_id) values (1,3);
 
 
