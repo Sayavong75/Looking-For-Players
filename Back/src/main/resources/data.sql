@@ -1,4 +1,4 @@
-insert into player(id, username) values (1,'Saya');
+insert into player(id, username) values (player_id_seq.nextval,'Saya');
 
 
 insert into game (id, id_steam, name_game, img_url_game) values (1, 10, 'Counter-Strike', 'https://steamcdn-a.akamaihd.net/steam/apps/10/header.jpg?t=1568751918');
