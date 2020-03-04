@@ -8,7 +8,7 @@ public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "player_id_seq")
-    @SequenceGenerator(name="player_generator", sequenceName = "player_id_seq", allocationSize = 1)
+    @SequenceGenerator(name="player_id_seq", sequenceName = "player_id_seq", allocationSize = 1)
     private Long id;
 
     @Column
