@@ -1,5 +1,6 @@
 package co.simplon.lfpapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -24,17 +25,15 @@ public class Session {
 
 
 
-    //Relation unidirectionnelle donc rien à mettre dans la class Session
-    /*@ManyToOne
-    private Game game;*/
+    //Relation bidirectionnelle
+    /*@JsonIgnore*/
+    @ManyToOne
+    private Game game;
 
-    //Relation unidirectionnelle donc rien à mettre dans la class Session
-   /* @ManyToMany(mappedBy = "sessions")
-    private Set<Player> players;*/
-
-    @NotNull
-    @Column
-    private Integer rating;
+    //Relation bidirectionnelle
+    @JsonIgnore
+    @ManyToMany(mappedBy = "sessions")
+    private Set<Player> players;
 
 
     public Long getId() {
@@ -53,11 +52,19 @@ public class Session {
         this.dateOfGamingSession = dateOfGamingSession;
     }
 
-    public Integer getRating() {
-        return rating;
+    public Game getGame() {
+        return game;
     }
 
-    public void setRating(Integer rating) {
-        this.rating = rating;
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Set<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(Set<Player> players) {
+        this.players = players;
     }
 }
