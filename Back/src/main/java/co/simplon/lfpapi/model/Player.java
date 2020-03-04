@@ -34,4 +34,12 @@ public class Player {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public Set<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(Set<Session> sessions) {
+        this.sessions = sessions;
+    }
 }
