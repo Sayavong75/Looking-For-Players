@@ -14,4 +14,6 @@ insert into player_sessions (player_id, sessions_id) values (1,1);
 insert into player_sessions (player_id, sessions_id) values (2,1);
 insert into player_sessions (player_id, sessions_id) values (1,2);
 
+insert into game_sessions (game_idx, session_idx) values (1,1);
+
 

@@ -63,4 +63,12 @@ public class Game {
     public void setImageUrlGame(String imageUrlGame) {
         this.imageUrlGame = imageUrlGame;
     }
+
+    public Set<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(Set<Session> sessions) {
+        this.sessions = sessions;
+    }
 }
