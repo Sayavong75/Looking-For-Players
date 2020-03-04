@@ -42,7 +42,7 @@ public class GameController {
         return gameService.getGames(pageNumber, pageSize, criteria, direction);
     }
 
-    @PostMapping("/addGame")
+    @PostMapping
     public ResponseEntity<Game> addGame(@RequestBody Game gameToAdd) {
         Game savedGame = gameService.addGame(gameToAdd);
         return ResponseEntity.ok(savedGame);
