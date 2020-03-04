@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/games")
+@RequestMapping("/api/game")
 @CrossOrigin("*")
 
 public class GameController {
