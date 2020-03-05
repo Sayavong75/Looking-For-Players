@@ -1,6 +1,9 @@
 package co.simplon.lfpapi.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -26,12 +29,10 @@ public class Session {
 
 
     //Relation bidirectionnelle
-    /*@JsonIgnore*/
     @ManyToOne
     private Game game;
 
     //Relation bidirectionnelle
-    @JsonIgnore
     @ManyToMany(mappedBy = "sessions")
     private Set<Player> players;
 
