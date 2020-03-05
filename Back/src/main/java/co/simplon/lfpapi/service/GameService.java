@@ -3,9 +3,8 @@ package co.simplon.lfpapi.service;
 import co.simplon.lfpapi.model.Game;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
+import co.simplon.lfpapi.exception.EntityNotFoundException;
 
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public interface GameService {
@@ -18,7 +17,7 @@ public interface GameService {
 //    List<Game> getGames();
 
     /**
-     * Aliment list retrieval.
+     * Game list retrieval.
      *
      * @param pageNumber the page number to get
      * @param pageSize   the page size to choose
@@ -30,7 +29,14 @@ public interface GameService {
 
     Game addGame(Game gameToAdd);
 
-    Game getGame(Long id);
+    /**
+     * Get one game with its ID.
+     *
+     * @param gameId the aliment ID to look for.
+     * @return the aliment if ID is found in DB.
+     * @throws EntityNotFoundException in case ID is not found in DB.
+     */
+    Game getGameById(Long gameId) throws EntityNotFoundException;
 
 
 
