@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import co.simplon.lfpapi.exception.EntityNotFoundException;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -59,8 +60,14 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public Game getGame(Long id) {
-        return gameRepository.getOne(id);
+    public Game getGameById(Long gameId) throws EntityNotFoundException {
+        Optional<Game> dbGame = gameRepository.findById(gameId);
+
+        if (dbGame.isPresent()) {
+            return dbGame.get();
+        } else {
+            throw new EntityNotFoundException("The aliment with ID: " + gameId + " cannot be found in DB", "Game");
+        }
     }
 
 }
