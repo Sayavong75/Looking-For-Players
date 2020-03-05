@@ -1,5 +1,9 @@
 package co.simplon.lfpapi.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -14,8 +18,8 @@ public class Player {
     @Column
     private String username;
 
-    //relation unidirectionnelle
     @ManyToMany
+    @JsonIgnore
     private Set<Session> sessions;
 
     @ManyToMany
