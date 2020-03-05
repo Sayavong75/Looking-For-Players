@@ -18,8 +18,13 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public Player getOnePlayer(Long idPlayer){
-        return playerRepository.getOne(idPlayer);
+    public Player getOnePlayer(Long idPlayer) {
+        Optional<Player> playerInBase = this.playerRepository.findById(idPlayer);
+        if (playerInBase.isPresent()) {
+            return playerInBase.get();
+        } else {
+            throw new InvalidPlayerException();
+        }
     }
 
     @Override
