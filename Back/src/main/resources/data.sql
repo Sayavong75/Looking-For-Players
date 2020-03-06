@@ -21,4 +21,8 @@ insert into player_games (players_id, games_id) values (1,1);
 insert into player_games (players_id, games_id) values (1,3);
 insert into player_games (players_id, games_id) values (2,1);
 
+-- Ajout Guigui
+
+-- Ajout Guigui
+
 
