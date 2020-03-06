@@ -60,5 +60,12 @@ public class Player {
         this.games = games;
     }
 
+    public Favorite getFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(Favorite favorite) {
+        this.favorite = favorite;
+    }
 
 }
