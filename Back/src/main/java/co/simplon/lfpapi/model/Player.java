@@ -25,8 +25,13 @@ public class Player {
     @ManyToMany
     private Set<Game> games;
 
+
+    @OneToMany
+    private Set<Rating> Ratings;
+
     @ManyToOne
     private Favorite favorite;
+
 
     public Long getId() {
         return id;
@@ -66,6 +71,12 @@ public class Player {
 
     public void setFavorite(Favorite favorite) {
         this.favorite = favorite;
+
+    public Set<Rating> getRatings() {
+        return Ratings;
     }
 
+    public void setRatings(Set<Rating> ratings) {
+        Ratings = ratings;
+    }
 }
