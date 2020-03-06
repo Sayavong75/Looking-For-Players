@@ -1,8 +1,6 @@
 package co.simplon.lfpapi.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -12,7 +10,7 @@ public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "player_id_seq")
-    @SequenceGenerator(name="player_id_seq", sequenceName = "player_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "player_id_seq", sequenceName = "player_id_seq", allocationSize = 1)
     private Long id;
 
     @Column
@@ -27,7 +25,7 @@ public class Player {
 
 
     @OneToMany
-    private Set<Rating> Ratings;
+    private Set<Rating> ratings;
 
     @ManyToOne
     private Favorite favorite;
@@ -72,11 +70,15 @@ public class Player {
     public void setFavorite(Favorite favorite) {
         this.favorite = favorite;
 
+
+    }
+
     public Set<Rating> getRatings() {
-        return Ratings;
+        return ratings;
     }
 
     public void setRatings(Set<Rating> ratings) {
-        Ratings = ratings;
+        this.ratings = ratings;
     }
+
 }
