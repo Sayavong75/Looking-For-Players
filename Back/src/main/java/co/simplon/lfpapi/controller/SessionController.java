@@ -27,7 +27,7 @@ public class SessionController {
         return this.sessionService.getOneSession(idSession);
     }
 
-    @GetMapping("/{idPlayer}")
+    @GetMapping("/player/{idPlayer}")
     public List<Session> getAllSessionsOFOnePlayer(@PathVariable Long idPlayer){
         return this.sessionService.getSessionsOfOnePlayer(idPlayer);
     }
