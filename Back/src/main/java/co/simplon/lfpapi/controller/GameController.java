@@ -48,9 +48,9 @@ public class GameController {
         return ResponseEntity.ok(savedGame);
     }
 
-    @GetMapping("/{id}")
-    public Game getGame(@PathVariable Long id) {
-        return this.gameService.getGame(id);
+    @GetMapping("/{gameId}")
+    public Game getGame(@PathVariable Long gameId) {
+        return this.gameService.getGameById(gameId);
     }
 
 }

@@ -25,10 +25,12 @@ public class Player {
     @ManyToMany
     private Set<Game> games;
 
+
     @OneToMany
     private Set<Rating> Ratings;
 
-
+    @ManyToOne
+    private Favorite favorite;
 
 
     public Long getId() {
