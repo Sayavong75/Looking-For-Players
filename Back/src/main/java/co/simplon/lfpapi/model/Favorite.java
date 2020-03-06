@@ -1,6 +1,8 @@
 package co.simplon.lfpapi.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -14,6 +16,8 @@ public class Favorite {
     @Column(nullable = false)
     private Long idPlayer;
 
+    @NotNull
+    @NotBlank
     @Column(nullable = false)
     private LocalDate dateOfFavoritePlayerAdded;
 
