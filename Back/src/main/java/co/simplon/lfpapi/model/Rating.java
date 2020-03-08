@@ -18,14 +18,21 @@ public class Rating {
     @NotNull
     @Min(value = 0)
     @Max(value = 5)
-    private Integer ratingGivenByOnePlayerToAnotherPlayer;
+    private Integer ratingOfAPlayer;
 
-    @Column
-    @NotNull
-    private Integer ratingReceivedByOnePlayerFromAnotherPlayer;
+    // Il faut disposer d'un joueur évaluateur et d'un joueur évalué -> regarder à faire plusieurs relations vers l'entité Player
+
 
     @ManyToOne
-    private Player player;
+    private Player evaluatingPlayer;
+
+    @ManyToOne
+    private Player evaluatedPlayer;
+
+    @ManyToOne
+    private Session sessionOfEvaluation;
+
+
 
 
     public Long getId() {
@@ -36,27 +43,35 @@ public class Rating {
         this.id = id;
     }
 
-    public Integer getRatingGivenByOnePlayerToAnotherPlayer() {
-        return ratingGivenByOnePlayerToAnotherPlayer;
+    public Integer getRatingOfAPlayer() {
+        return ratingOfAPlayer;
     }
 
-    public void setRatingGivenByOnePlayerToAnotherPlayer(Integer ratingGivenByOnePlayerToAnotherPlayer) {
-        this.ratingGivenByOnePlayerToAnotherPlayer = ratingGivenByOnePlayerToAnotherPlayer;
+    public void setRatingOfAPlayer(Integer ratingOfAPlayer) {
+        this.ratingOfAPlayer = ratingOfAPlayer;
     }
 
-    public Integer getRatingReceivedByOnePlayerFromAnotherPlayer() {
-        return ratingReceivedByOnePlayerFromAnotherPlayer;
+    public Player getEvaluatingPlayer() {
+        return evaluatingPlayer;
     }
 
-    public void setRatingReceivedByOnePlayerFromAnotherPlayer(Integer ratingReceivedByOnePlayerFromAnotherPlayer) {
-        this.ratingReceivedByOnePlayerFromAnotherPlayer = ratingReceivedByOnePlayerFromAnotherPlayer;
+    public void setEvaluatingPlayer(Player evaluatingPlayer) {
+        this.evaluatingPlayer = evaluatingPlayer;
     }
 
-    public Player getPlayer() {
-        return player;
+    public Player getEvaluatedPlayer() {
+        return evaluatedPlayer;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setEvaluatedPlayer(Player evaluatedPlayer) {
+        this.evaluatedPlayer = evaluatedPlayer;
+    }
+
+    public Session getSessionOfEvaluation() {
+        return sessionOfEvaluation;
+    }
+
+    public void setSessionOfEvaluation(Session sessionOfEvaluation) {
+        this.sessionOfEvaluation = sessionOfEvaluation;
     }
 }
