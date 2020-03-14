@@ -11,6 +11,7 @@ import { NewSessionComponent } from './new-session/new-session.component';
 import { SessionListComponent } from './sessions-list/session-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CalendarComponent } from './calendar/calendar.component';
       {path: 'playerprofile' , component: PlayerProfileComponent},
       {path: 'newsession' , component: NewSessionComponent},
       {path: 'sessionsList' , component: SessionListComponent}
-        ])
+        ]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
