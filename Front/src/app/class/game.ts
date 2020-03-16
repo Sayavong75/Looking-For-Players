@@ -1,6 +1,6 @@
 export class Game {
   id: number;
   idSteam: number;
-  name: string;
+  nameGame: string;
   imageUrlGame: string;
 }

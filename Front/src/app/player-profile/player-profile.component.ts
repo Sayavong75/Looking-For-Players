@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiConnectionService} from '../service/api-connection.service';
+import {Player} from '../class/player';
 
 @Component({
   selector: 'app-player-profile',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./player-profile.component.css']
 })
 export class PlayerProfileComponent implements OnInit {
+  players: Player[];
 
-  constructor() { }
+  constructor(private connectionService: ApiConnectionService) { }
 
   ngOnInit() {
+    this.connectionService.getPlayers().subscribe(
+      players => this.players = players
+    );
   }
 
 }
