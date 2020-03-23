@@ -24,14 +24,11 @@ public class Player {
     private Set<Game> games;
 
 
-/*    @OneToMany
-    private Set<Rating> ratingsGiven;
-
-    @OneToMany
-    private Set<Rating> ratingsReceived;*/
-
     @ManyToOne
     private Favorite favorite;
+
+    @OneToMany
+    private Set<Rating> ratings;
 
 
     public Long getId() {
@@ -74,19 +71,11 @@ public class Player {
         this.favorite = favorite;
     }
 
-/*    public Set<Rating> getRatingsGiven() {
-        return ratingsGiven;
+    public Set<Rating> getRatings() {
+        return ratings;
     }
 
-    public void setRatingsGiven(Set<Rating> ratingsGiven) {
-        this.ratingsGiven = ratingsGiven;
+    public void setRatings(Set<Rating> ratings) {
+        this.ratings = ratings;
     }
-
-    public Set<Rating> getRatingsReceived() {
-        return ratingsReceived;
-    }
-
-    public void setRatingsReceived(Set<Rating> ratingsReceived) {
-        this.ratingsReceived = ratingsReceived;
-    }*/
 }
