@@ -27,11 +27,12 @@ public class Player {
     @OneToMany
     private Set<Favorite> favorites;
 
-/*    @OneToMany
-    private Set<Rating> ratingsGiven;
+    @ManyToOne
+    private Favorite favorite;
 
     @OneToMany
-    private Set<Rating> ratingsReceived;*/
+    private Set<Rating> ratings;
+
 
     public Long getId() {
         return id;
@@ -65,27 +66,19 @@ public class Player {
         this.games = games;
     }
 
-/*    public Set<Rating> getRatingsGiven() {
-        return ratingsGiven;
+    public Favorite getFavorite() {
+        return favorite;
     }
 
-    public void setRatingsGiven(Set<Rating> ratingsGiven) {
-        this.ratingsGiven = ratingsGiven;
+    public void setFavorite(Favorite favorite) {
+        this.favorite = favorite;
     }
 
-    public Set<Rating> getRatingsReceived() {
-        return ratingsReceived;
+    public Set<Rating> getRatings() {
+        return ratings;
     }
 
-    public void setRatingsReceived(Set<Rating> ratingsReceived) {
-        this.ratingsReceived = ratingsReceived;
-    }*/
-
-    public Set<Favorite> getFavorites() {
-        return favorites;
-    }
-
-    public void setFavorites(Set<Favorite> favorites) {
-        this.favorites = favorites;
+    public void setRatings(Set<Rating> ratings) {
+        this.ratings = ratings;
     }
 }

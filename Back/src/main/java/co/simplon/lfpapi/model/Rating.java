@@ -23,17 +23,14 @@ public class Rating {
     // Il faut disposer d'un joueur évaluateur et d'un joueur évalué -> regarder à faire plusieurs relations vers l'entité Player
 
 
-    @ManyToOne
-    private Player evaluatingPlayer;
+   /* @ManyToOne
+    private Player evaluatingPlayer;*/
 
     @ManyToOne
     private Player evaluatedPlayer;
 
     @ManyToOne
     private Session sessionOfEvaluation;
-
-
-
 
     public Long getId() {
         return id;
@@ -49,14 +46,6 @@ public class Rating {
 
     public void setRatingOfAPlayer(Integer ratingOfAPlayer) {
         this.ratingOfAPlayer = ratingOfAPlayer;
-    }
-
-    public Player getEvaluatingPlayer() {
-        return evaluatingPlayer;
-    }
-
-    public void setEvaluatingPlayer(Player evaluatingPlayer) {
-        this.evaluatingPlayer = evaluatingPlayer;
     }
 
     public Player getEvaluatedPlayer() {
