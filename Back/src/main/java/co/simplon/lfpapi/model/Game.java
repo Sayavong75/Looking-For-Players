@@ -11,7 +11,7 @@ import java.util.Set;
 public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "game_id_seq")
-    @SequenceGenerator(name="game_id_seq", sequenceName = "game_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "game_id_seq", sequenceName = "game_id_seq", allocationSize = 1)
     private Long id;
 
     @Column(nullable = false)
@@ -27,8 +27,8 @@ public class Game {
     @OneToMany
     @JoinTable(
             name = "game_sessions",
-            joinColumns = @JoinColumn(name="game_idx"),
-            inverseJoinColumns = @JoinColumn(name="session_idx")
+            joinColumns = @JoinColumn(name = "game_idx"),
+            inverseJoinColumns = @JoinColumn(name = "session_idx")
     )
     private Set<Session> sessions;
 
@@ -37,33 +37,32 @@ public class Game {
     private Set<Player> players;
 
 
-
     public Long getId() {
         return id;
-    }
-
-    public Long getIdSteam() {
-        return idSteam;
-    }
-
-    public String getNameGame() {
-        return nameGame;
-    }
-
-    public String getImageUrlGame() {
-        return imageUrlGame;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
+    public Long getIdSteam() {
+        return idSteam;
+    }
+
     public void setIdSteam(Long idSteam) {
         this.idSteam = idSteam;
     }
 
+    public String getNameGame() {
+        return nameGame;
+    }
+
     public void setNameGame(String nameGame) {
         this.nameGame = nameGame;
+    }
+
+    public String getImageUrlGame() {
+        return imageUrlGame;
     }
 
     public void setImageUrlGame(String imageUrlGame) {

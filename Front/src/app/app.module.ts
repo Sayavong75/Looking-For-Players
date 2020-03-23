@@ -12,6 +12,7 @@ import { SessionListComponent } from './sessions-list/session-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import {HttpClientModule} from '@angular/common/http';
+import { PlayersListComponent } from './players-list/players-list.component';
 
 @NgModule({
   declarations: [
@@ -23,15 +24,17 @@ import {HttpClientModule} from '@angular/common/http';
     NewSessionComponent,
     SessionListComponent,
     FooterComponent,
-    CalendarComponent
+    CalendarComponent,
+    PlayersListComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       {path: '' , component: HomeComponent },
-      {path: 'playerprofile' , component: PlayerProfileComponent},
+      {path: 'playerprofile/:playerId' , component: PlayerProfileComponent},
       {path: 'newsession' , component: NewSessionComponent},
-      {path: 'sessionsList' , component: SessionListComponent}
+      {path: 'sessionsList' , component: SessionListComponent},
+      {path: 'playerslist' , component: PlayersListComponent}
         ]),
     HttpClientModule
   ],

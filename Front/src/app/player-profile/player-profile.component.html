@@ -1,19 +1,14 @@
+<h2>Profil de {{player.username}} :</h2>
+
 <table>
-  <caption>Liste des joueurs :</caption>
-  <thead>
-  <tr>
-    <th>Id</th>
-    <th>Nom du joueur</th>
-    <th>Liste des jeux</th>
-    <th>Favoris du joueur</th>
-  </tr>
-  </thead>
+  <caption>Liste des jeux de {{player.username}}</caption>
   <tbody>
-  <tr *ngFor="let player of players">
-    <td>{{player.id}}</td>
-    <td>{{player.username}}</td>
-    <td><span *ngFor="let game of player.games">{{game.nameGame}}<br></span></td>
-    <td>{{player.favorite}}</td>
+  <tr *ngFor="let game of player.games, let gameId = index">
+    <td>{{game.nameGame}}</td>
+    <td><img class="gameImageInTable" src="{{game.imageUrlGame}}"></td>
+    <td><button (click)="updatePlayerProfile(gameId)">X</button>Supprimer le jeu</td> <!--# CSSS : Mettre la croix en gros et en rouge, le texte en dessous-->
   </tr>
   </tbody>
 </table>
+
+
