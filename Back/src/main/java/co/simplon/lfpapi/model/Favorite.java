@@ -10,7 +10,7 @@ import java.util.Set;
 public class Favorite {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "favorite_id_seq")
-    @SequenceGenerator(name="favorite_id_seq", sequenceName = "favorite_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "favorite_id_seq", sequenceName = "favorite_id_seq", allocationSize = 1)
     private Long id;
 
     @Column(nullable = false)
@@ -40,7 +40,7 @@ public class Favorite {
         this.idPlayer = idPlayer;
     }
 
-    public LocalDate get() {
+    public LocalDate getDateOfFavoritePlayerAdded() {
         return dateOfFavoritePlayerAdded;
     }
 

@@ -16,5 +16,13 @@ export class ApiConnectionService {
     return this.http.get<Player[]>('http://localhost:8080/api/players');
   }
 
+  getOnePlayer(playerId): Observable<Player> {
+    return this.http.get<Player>(`http://localhost:8080/api/players/${playerId}`);
+  }
+
+  updatePlayer(player, playerId) {
+    return this.http.put(`http://localhost:8080/api/players/${playerId}`, player);
+  }
+
 
 }

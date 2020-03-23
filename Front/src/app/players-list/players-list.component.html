@@ -1,0 +1,21 @@
+<table>
+  <caption>Liste des joueurs :</caption>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Nom du joueur</th>
+    <th>Liste des jeux</th>
+    <th>Favoris du joueur</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let player of players">
+    <td>{{player.id}}</td>
+    <td>{{player.username}}</td>
+    <td><span *ngFor="let game of player.games">{{game.nameGame}}<br></span></td>
+    <td>{{player.favorite}}</td>
+    <td><button [routerLink]="['/playerprofile', player.id]">Profil de <b>{{player.username}}</b></button></td>
+  </tr>
+  </tbody>
+</table>
