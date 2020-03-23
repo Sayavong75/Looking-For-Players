@@ -3,6 +3,7 @@ package co.simplon.lfpapi.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -23,16 +24,14 @@ public class Player {
     @ManyToMany
     private Set<Game> games;
 
+    @OneToMany
+    private Set<Favorite> favorites;
 
 /*    @OneToMany
     private Set<Rating> ratingsGiven;
 
     @OneToMany
     private Set<Rating> ratingsReceived;*/
-
-    @ManyToOne
-    private Favorite favorite;
-
 
     public Long getId() {
         return id;
@@ -66,14 +65,6 @@ public class Player {
         this.games = games;
     }
 
-    public Favorite getFavorite() {
-        return favorite;
-    }
-
-    public void setFavorite(Favorite favorite) {
-        this.favorite = favorite;
-    }
-
 /*    public Set<Rating> getRatingsGiven() {
         return ratingsGiven;
     }
@@ -89,4 +80,12 @@ public class Player {
     public void setRatingsReceived(Set<Rating> ratingsReceived) {
         this.ratingsReceived = ratingsReceived;
     }*/
+
+    public Set<Favorite> getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(Set<Favorite> favorites) {
+        this.favorites = favorites;
+    }
 }

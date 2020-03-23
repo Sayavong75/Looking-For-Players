@@ -38,5 +38,5 @@ insert into player_games (players_id, games_id) values (2,1);
 
 
 -- Ajouts Saya
-insert into favorite (id, id_player, date_of_favorite_player_added) values (nextval('favorite_id_seq'),1,'01/01/2020');
-insert into favorite (id, id_player, date_of_favorite_player_added) values (nextval('favorite_id_seq'),2, '20/02/2020');
+insert into favorite (id, player_id, favorite_id, date_of_favorite_player_added) values (nextval('favorite_id_seq'),1,2,'01/01/2020');
+insert into favorite (id, player_id, favorite_id, date_of_favorite_player_added) values (nextval('favorite_id_seq'),2,1,'20/02/2020');
