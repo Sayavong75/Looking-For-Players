@@ -1,5 +1,7 @@
 package co.simplon.lfpapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -13,16 +15,17 @@ public class Favorite {
     @SequenceGenerator(name = "favorite_id_seq", sequenceName = "favorite_id_seq", allocationSize = 1)
     private Long id;
 
-    @Column(nullable = false)
-    private Long idPlayer;
-
     @NotNull
     @NotBlank
     @Column(nullable = false)
     private LocalDate dateOfFavoritePlayerAdded;
 
-    @OneToMany(mappedBy = "favorite")
-    private Set<Player> players;
+    @Column(nullable = false)
+    private Long favoriteId;
+
+    //Relation unidirectionnelle
+    @ManyToOne
+    private Player player;
 
     public Long getId() {
         return id;
@@ -30,14 +33,6 @@ public class Favorite {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getIdPlayer() {
-        return idPlayer;
-    }
-
-    public void setIdPlayer(Long idPlayer) {
-        this.idPlayer = idPlayer;
     }
 
     public LocalDate getDateOfFavoritePlayerAdded() {
@@ -48,11 +43,19 @@ public class Favorite {
         this.dateOfFavoritePlayerAdded = dateOfFavoritePlayerAdded;
     }
 
-    public Set<Player> getPlayers() {
-        return players;
+    public Player getPlayer() {
+        return player;
     }
 
-    public void setPlayers(Set<Player> players) {
-        this.players = players;
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Long getFavoriteId() {
+        return favoriteId;
+    }
+
+    public void setFavoriteId(Long favoriteId) {
+        this.favoriteId = favoriteId;
     }
 }

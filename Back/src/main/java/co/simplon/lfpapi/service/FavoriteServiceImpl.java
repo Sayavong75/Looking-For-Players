@@ -32,7 +32,9 @@ public class FavoriteServiceImpl implements FavoriteService {
         if (dbFavorite.isPresent()) {
             return dbFavorite.get();
         } else {
-            throw new EntityNotFoundException("The aliment with ID: " + favoriteId + " cannot be found in DB", "Game");
+            throw new EntityNotFoundException("The favorite" +
+                    "" +
+                    " with ID: " + favoriteId + " cannot be found in DB", "Game");
         }
     }
     @Override

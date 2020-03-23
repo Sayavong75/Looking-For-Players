@@ -3,6 +3,7 @@ package co.simplon.lfpapi.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -23,6 +24,8 @@ public class Player {
     @ManyToMany
     private Set<Game> games;
 
+    @OneToMany
+    private Set<Favorite> favorites;
 
     @ManyToOne
     private Favorite favorite;
