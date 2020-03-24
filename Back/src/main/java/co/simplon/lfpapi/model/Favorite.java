@@ -1,6 +1,9 @@
 package co.simplon.lfpapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -24,8 +27,12 @@ public class Favorite {
     private Long favoriteId;*/
 
     //Relation unidirectionnelle
-    /*@ManyToOne
-    private Player player;*/
+
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "id")
+    @JsonIdentityReference(alwaysAsId = true)
+    @ManyToOne
+    private Player favoritePlayer;
 
     public Long getId() {
         return id;
@@ -43,19 +50,11 @@ public class Favorite {
         this.dateOfFavoritePlayerAdded = dateOfFavoritePlayerAdded;
     }
 
-/*    public Player getPlayer() {
-        return player;
+    public Player getFavoritePlayer() {
+        return favoritePlayer;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
-    }*/
-
-   /* public Long getFavoriteId() {
-        return favoriteId;
+    public void setFavoritePlayer(Player favoritePlayer) {
+        this.favoritePlayer = favoritePlayer;
     }
-
-    public void setFavoriteId(Long favoriteId) {
-        this.favoriteId = favoriteId;
-    }*/
 }
