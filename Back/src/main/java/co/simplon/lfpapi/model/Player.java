@@ -31,14 +31,12 @@ public class Player {
     @OneToMany
     private Set<Favorite> favorites;
 
-    /*@JsonBackReference*/
-    @OneToMany /*(mappedBy ="evaluatingPlayer", cascade = CascadeType.ALL)*/
+    // RELATION UNIDIRECTIONNELLE vers Rating
+    @OneToMany
     private Set<Rating> ratings;
 
-   /* @JsonIgnore
-    @OneToMany (mappedBy = "evaluatedPlayer")
-    private Set<Rating> ratingsReceived;*/
 
+    //GETTERS & SETTERS
 
     public Long getId() {
         return id;
@@ -88,11 +86,4 @@ public class Player {
         this.ratings = ratings;
     }
 
-/*    public Set<Rating> getRatingsReceived() {
-        return ratingsReceived;
-    }
-
-    public void setRatingsReceived(Set<Rating> ratingsReceived) {
-        this.ratingsReceived = ratingsReceived;
-    }*/
 }
