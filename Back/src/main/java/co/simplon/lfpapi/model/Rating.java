@@ -28,9 +28,9 @@ public class Rating {
 
     @ManyToOne
     private Player evaluatedPlayer;
-
+/*
     @ManyToOne
-    private Session sessionOfEvaluation;
+    private Session sessionOfEvaluation;*/
 
     public Long getId() {
         return id;
@@ -56,11 +56,11 @@ public class Rating {
         this.evaluatedPlayer = evaluatedPlayer;
     }
 
-    public Session getSessionOfEvaluation() {
+/*    public Session getSessionOfEvaluation() {
         return sessionOfEvaluation;
     }
 
     public void setSessionOfEvaluation(Session sessionOfEvaluation) {
         this.sessionOfEvaluation = sessionOfEvaluation;
-    }
+    }*/
 }
