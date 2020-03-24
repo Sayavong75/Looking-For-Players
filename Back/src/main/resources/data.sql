@@ -6,6 +6,16 @@ insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_i
 insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 440, 'Team Fortress 2', 'https://steamcdn-a.akamaihd.net/steam/apps/440/header.jpg?t=1577610485');
 insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 570, 'Dota 2', 'https://steamcdn-a.akamaihd.net/steam/apps/570/header.jpg?t=1581406684');
 insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 230410, 'Warframe', 'https://steamcdn-a.akamaihd.net/steam/apps/230410/header.jpg?t=1576268096');
+insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 271590, 'Grand Theft Auto V', 'https://steamcdn-a.akamaihd.net/steam/apps/271590/header.jpg?t=1579797647');
+insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 1085660, 'Destiny 2', 'https://steamcdn-a.akamaihd.net/steam/apps/1085660/header.jpg?t=1583858222');
+insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 582010, 'MONSTER HUNTER: WORLD', 'https://steamcdn-a.akamaihd.net/steam/apps/582010/header.jpg?t=1583974232');
+insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 578080 , 'PLAYERUNundry''S BATTLEGROUNDS', 'https://steamcdn-a.akamaihd.net/steam/apps/578080/header.jpg?t=1581036302');
+insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 730, 'Counter-Strike: Global Offensive', 'https://steamcdn-a.akamaihd.net/steam/apps/730/header.jpg?t=1580765900');
+insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 346110, 'ARK: Survival Evolved', 'https://steamcdn-a.akamaihd.net/steam/apps/346110/header.jpg?t=1583178772');
+insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 1100600, 'Football Manager 2020', 'https://steamcdn-a.akamaihd.net/steam/apps/1100600/header.jpg?t=1584981392');
+insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 203160, 'Tomb Raider', 'https://steamcdn-a.akamaihd.net/steam/apps/203160/header.jpg?t=1584650700');
+insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 397540, 'Borderlands 3', 'https://steamcdn-a.akamaihd.net/steam/apps/397540/header.jpg?t=1584481269');
+insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 252490, 'Rust', 'https://steamcdn-a.akamaihd.net/steam/apps/252490/header.jpg?t=1579783966');
 
 insert into session (id, date_of_gaming_session, game_id) values (nextval('session_id_seq'),'04/03/2020',1);
 insert into session (id, date_of_gaming_session, game_id) values (nextval('session_id_seq'),'18/02/2020',3);
