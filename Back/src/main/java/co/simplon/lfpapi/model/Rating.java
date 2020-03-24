@@ -1,5 +1,8 @@
 package co.simplon.lfpapi.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -22,8 +25,8 @@ public class Rating {
 
     // Il faut disposer d'un joueur évaluateur et d'un joueur évalué -> regarder à faire plusieurs relations vers l'entité Player
 
-
-   /* @ManyToOne
+    /*@JsonManagedReference
+    @ManyToOne
     private Player evaluatingPlayer;*/
 
     @ManyToOne

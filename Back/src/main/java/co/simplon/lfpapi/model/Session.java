@@ -26,7 +26,7 @@ public class Session {
     private Game game;
 
     //Relation bidirectionnelle
-    @ManyToMany(mappedBy = "sessions")
+    @ManyToMany/*(mappedBy = "sessions")*/
     private Set<Player> players;
 
     //Relation unidirectionnelle
