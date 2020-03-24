@@ -46,8 +46,10 @@ insert into player_ratings (player_id,ratings_id) values (2,2);
 -- Ajouts Saya
 insert into favorite (id, favorite_player_id, date_of_favorite_player_added) values (nextval('favorite_id_seq'),2,'01/01/2020');
 insert into favorite (id, favorite_player_id, date_of_favorite_player_added) values (nextval('favorite_id_seq'),3,'20/02/2020');
-insert into favorite (id, favorite_player_id, date_of_favorite_player_added) values (nextval('favorite_id_seq'),1,'01/01/2020');
+insert into favorite (id, favorite_player_id, date_of_favorite_player_added) values (nextval('favorite_id_seq'),2,'20/04/2020');
+insert into favorite (id, favorite_player_id, date_of_favorite_player_added) values (nextval('favorite_id_seq'),1,'24/03/2020');
 
 insert into player_favorites (player_id, favorites_id) values (1,1);
-insert into player_favorites (player_id, favorites_id) values (2,3);
-insert into player_favorites (player_id, favorites_id) values (3,2);
+insert into player_favorites (player_id, favorites_id) values (2,4);
+insert into player_favorites (player_id, favorites_id) values (3,3);
+insert into player_favorites (player_id, favorites_id) values (2,2);
