@@ -25,7 +25,8 @@ public class Rating {
     // Il faut disposer d'un joueur évaluateur et d'un joueur évalué -> regarder à faire plusieurs relations vers l'entité Player
 
     //EVALUATED PLAYER -- relation unidirectionnelle vers Player
-    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
             property = "id")
     @JsonIdentityReference(alwaysAsId = true)
     @ManyToOne

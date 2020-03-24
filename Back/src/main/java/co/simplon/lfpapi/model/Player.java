@@ -20,8 +20,8 @@ public class Player {
     @Column
     private String username;
 
-    @JsonIgnore
-    @ManyToMany (mappedBy = "players")
+    /*@JsonIgnore*/
+    @ManyToMany /*(mappedBy = "players")*/
     private Set<Session> sessions;
 
     @ManyToMany
