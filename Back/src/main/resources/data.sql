@@ -54,6 +54,7 @@ insert into player_games (players_id, games_id) values (2,1);
 
 insert into rating (id, rating_ofaplayer, evaluated_player_id) values (nextval('rating_id_seq'),4,2);
 
+
 insert into player_ratings (player_id,ratings_id) values (1,1);
 
 
