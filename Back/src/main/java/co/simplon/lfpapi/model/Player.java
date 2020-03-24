@@ -9,7 +9,6 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
 
-@JsonIgnoreProperties(value = {"evaluatedPlayer"})
 @Entity
 public class Player {
 
@@ -28,13 +27,13 @@ public class Player {
     @ManyToMany
     private Set<Game> games;
 
+    // RELATION UNIDIRECTIONNELLE vers Favorite
     @OneToMany
     private Set<Favorite> favorites;
 
     // RELATION UNIDIRECTIONNELLE vers Rating
     @OneToMany
     private Set<Rating> ratings;
-
 
     //GETTERS & SETTERS
 
