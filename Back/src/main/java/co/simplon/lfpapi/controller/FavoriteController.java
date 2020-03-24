@@ -36,4 +36,9 @@ public class FavoriteController {
         return ResponseEntity.ok(savedFavorite);
     }
 
+    @DeleteMapping("/{favoriteId}")
+    public void deleteFavorite(@PathVariable Long favoriteId){
+        this.favoriteService.deleteFavorite(favoriteId);
+    }
+
 }

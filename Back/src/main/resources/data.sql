@@ -1,6 +1,6 @@
 insert into player(id, username) values (nextval('player_id_seq'),'Saya');
 insert into player(id, username) values (nextval('player_id_seq'),'Guigui');
-
+insert into player(id, username) values (nextval('player_id_seq'),'Wizard');
 
 insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 10, 'Counter-Strike', 'https://steamcdn-a.akamaihd.net/steam/apps/10/header.jpg?t=1568751918');
 insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 440, 'Team Fortress 2', 'https://steamcdn-a.akamaihd.net/steam/apps/440/header.jpg?t=1577610485');
@@ -16,6 +16,7 @@ insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_i
 insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 203160, 'Tomb Raider', 'https://steamcdn-a.akamaihd.net/steam/apps/203160/header.jpg?t=1584650700');
 insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 397540, 'Borderlands 3', 'https://steamcdn-a.akamaihd.net/steam/apps/397540/header.jpg?t=1584481269');
 insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 252490, 'Rust', 'https://steamcdn-a.akamaihd.net/steam/apps/252490/header.jpg?t=1579783966');
+insert into game (id, id_steam, name_game, img_url_game) values (nextval('game_id_seq'), 238960, 'Path of Exile', 'https://steamcdn-a.akamaihd.net/steam/apps/238960/header.jpg?t=1584387270');
 
 insert into session (id, date_of_gaming_session, game_id) values (nextval('session_id_seq'),'04/03/2020',1);
 insert into session (id, date_of_gaming_session, game_id) values (nextval('session_id_seq'),'18/02/2020',3);
