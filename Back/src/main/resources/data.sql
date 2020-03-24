@@ -44,9 +44,19 @@ insert into player_games (players_id, games_id) values (2,1);
 -- insert into session_ratings (session_id, ratings_id) values (1,1);
 -- insert into session_ratings (session_id, ratings_id) values (1,2);
 -- insert into session_ratings (session_id, ratings_id) values (2,3);
+
+insert into rating (id, rating_ofaplayer, evaluated_player_id/*, session_of_evaluation_id*/) values (nextval('rating_id_seq'),4,2/*,1*/);
+insert into rating (id, rating_ofaplayer, evaluated_player_id/*, session_of_evaluation_id*/) values (nextval('rating_id_seq'),4,1/*,1*/);
+
+/*insert into player_ratings (player_id, ratings_id) values (1,1);*/
+/*insert into player_ratings (player_id, ratings_id) values (2,2);*/
 -- Ajout Guigui
 
 
 -- Ajouts Saya
-insert into favorite (id, player_id, favorite_id, date_of_favorite_player_added) values (nextval('favorite_id_seq'),1,2,'01/01/2020');
-insert into favorite (id, player_id, favorite_id, date_of_favorite_player_added) values (nextval('favorite_id_seq'),2,1,'20/02/2020');
+/*insert into favorite (id, player_id, date_of_favorite_player_added) values (nextval('favorite_id_seq'),1,'01/01/2020');
+insert into favorite (id, player_id, date_of_favorite_player_added) values (nextval('favorite_id_seq'),2,'20/02/2020');
+insert into favorite (id, player_id, date_of_favorite_player_added) values (nextval('favorite_id_seq'),3,'01/01/2020');
+
+insert into player_favorites (player_id, favorites_id) values (1,1);
+insert into player_favorites (player_id, favorites_id) values (2,2);*/

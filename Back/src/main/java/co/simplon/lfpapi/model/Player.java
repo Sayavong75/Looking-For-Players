@@ -27,10 +27,8 @@ public class Player {
     @OneToMany
     private Set<Favorite> favorites;
 
-    @ManyToOne
-    private Favorite favorite;
-
-    @OneToMany
+    @JsonIgnore
+    @OneToMany (mappedBy ="evaluatedPlayer", cascade = CascadeType.ALL)
     private Set<Rating> ratings;
 
 
@@ -66,12 +64,20 @@ public class Player {
         this.games = games;
     }
 
-    public Favorite getFavorite() {
+/*    public Favorite getFavorite() {
         return favorite;
     }
 
     public void setFavorite(Favorite favorite) {
         this.favorite = favorite;
+    }*/
+
+    public Set<Favorite> getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(Set<Favorite> favorites) {
+        this.favorites = favorites;
     }
 
     public Set<Rating> getRatings() {

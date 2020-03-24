@@ -30,9 +30,9 @@ public class Session {
     private Set<Player> players;
 
     //Relation unidirectionnelle
-    @JsonIgnore
+    /*@JsonIgnore
     @OneToMany
-    private Set<Rating> ratings;
+    private Set<Rating> ratings;*/
 
 
     public Long getId() {
@@ -67,11 +67,11 @@ public class Session {
         this.players = players;
     }
 
-    public Set<Rating> getRatings() {
+  /*  public Set<Rating> getRatings() {
         return ratings;
     }
 
     public void setRatings(Set<Rating> ratings) {
         this.ratings = ratings;
-    }
+    }*/
 }

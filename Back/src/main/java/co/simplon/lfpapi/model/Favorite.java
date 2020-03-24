@@ -20,12 +20,12 @@ public class Favorite {
     @Column(nullable = false)
     private LocalDate dateOfFavoritePlayerAdded;
 
-    @Column(nullable = false)
-    private Long favoriteId;
+    /*@Column(nullable = false)
+    private Long favoriteId;*/
 
     //Relation unidirectionnelle
-    @ManyToOne
-    private Player player;
+    /*@ManyToOne
+    private Player player;*/
 
     public Long getId() {
         return id;
@@ -43,19 +43,19 @@ public class Favorite {
         this.dateOfFavoritePlayerAdded = dateOfFavoritePlayerAdded;
     }
 
-    public Player getPlayer() {
+/*    public Player getPlayer() {
         return player;
     }
 
     public void setPlayer(Player player) {
         this.player = player;
-    }
+    }*/
 
-    public Long getFavoriteId() {
+   /* public Long getFavoriteId() {
         return favoriteId;
     }
 
     public void setFavoriteId(Long favoriteId) {
         this.favoriteId = favoriteId;
-    }
+    }*/
 }
