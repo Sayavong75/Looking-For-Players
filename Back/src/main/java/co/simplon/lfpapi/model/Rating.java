@@ -1,7 +1,6 @@
 package co.simplon.lfpapi.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
@@ -25,15 +24,15 @@ public class Rating {
 
     // Il faut disposer d'un joueur évaluateur et d'un joueur évalué -> regarder à faire plusieurs relations vers l'entité Player
 
-    /*@JsonManagedReference
-    @ManyToOne
-    private Player evaluatingPlayer;*/
-
+    //EVALUATED PLAYER -- relation unidirectionnelle vers Player
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "id")
+    @JsonIdentityReference(alwaysAsId = true)
     @ManyToOne
     private Player evaluatedPlayer;
-/*
-    @ManyToOne
-    private Session sessionOfEvaluation;*/
+
+
+    // ACCESSORS
 
     public Long getId() {
         return id;
@@ -59,11 +58,5 @@ public class Rating {
         this.evaluatedPlayer = evaluatedPlayer;
     }
 
-/*    public Session getSessionOfEvaluation() {
-        return sessionOfEvaluation;
-    }
 
-    public void setSessionOfEvaluation(Session sessionOfEvaluation) {
-        this.sessionOfEvaluation = sessionOfEvaluation;
-    }*/
 }

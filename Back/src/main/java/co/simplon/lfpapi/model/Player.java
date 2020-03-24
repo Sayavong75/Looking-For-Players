@@ -2,12 +2,14 @@ package co.simplon.lfpapi.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
 
+@JsonIgnoreProperties(value = {"evaluatedPlayer"})
 @Entity
 public class Player {
 
@@ -29,14 +31,12 @@ public class Player {
     @OneToMany
     private Set<Favorite> favorites;
 
-    /*@JsonIgnore*/
-    /*@JsonBackReference*/
-    @OneToMany /*(mappedBy ="evaluatingPlayer", cascade = CascadeType.ALL)*/
+    // RELATION UNIDIRECTIONNELLE vers Rating
+    @OneToMany
     private Set<Rating> ratings;
 
-    /*@OneToMany (mappedBy = "evaluatedPlayers")
-    private Set<Rating> ratingsReceived;*/
 
+    //GETTERS & SETTERS
 
     public Long getId() {
         return id;
@@ -70,14 +70,6 @@ public class Player {
         this.games = games;
     }
 
-/*    public Favorite getFavorite() {
-        return favorite;
-    }
-
-    public void setFavorite(Favorite favorite) {
-        this.favorite = favorite;
-    }*/
-
     public Set<Favorite> getFavorites() {
         return favorites;
     }
@@ -93,4 +85,5 @@ public class Player {
     public void setRatings(Set<Rating> ratings) {
         this.ratings = ratings;
     }
+
 }
