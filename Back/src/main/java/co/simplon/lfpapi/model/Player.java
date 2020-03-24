@@ -1,6 +1,8 @@
 package co.simplon.lfpapi.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,8 +19,8 @@ public class Player {
     @Column
     private String username;
 
-    @ManyToMany
     @JsonIgnore
+    @ManyToMany (mappedBy = "players")
     private Set<Session> sessions;
 
     @ManyToMany
@@ -27,9 +29,13 @@ public class Player {
     @OneToMany
     private Set<Favorite> favorites;
 
-    @JsonIgnore
-    @OneToMany (mappedBy ="evaluatedPlayer", cascade = CascadeType.ALL)
+    /*@JsonIgnore*/
+    /*@JsonBackReference*/
+    @OneToMany /*(mappedBy ="evaluatingPlayer", cascade = CascadeType.ALL)*/
     private Set<Rating> ratings;
+
+    /*@OneToMany (mappedBy = "evaluatedPlayers")
+    private Set<Rating> ratingsReceived;*/
 
 
     public Long getId() {
