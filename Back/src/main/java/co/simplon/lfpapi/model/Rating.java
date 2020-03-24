@@ -22,7 +22,7 @@ public class Rating {
     @Max(value = 5)
     private Integer ratingOfAPlayer;
 
-    // Il faut disposer d'un joueur évaluateur et d'un joueur évalué -> regarder à faire plusieurs relations vers l'entité Player
+    // Il faut disposer d'un joueur évaluateur et d'un joueur évalué
 
     //EVALUATED PLAYER -- relation unidirectionnelle vers Player
     @JsonIdentityInfo(

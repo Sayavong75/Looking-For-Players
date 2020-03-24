@@ -23,11 +23,7 @@ public class Favorite {
     @Column(nullable = false)
     private LocalDate dateOfFavoritePlayerAdded;
 
-    /*@Column(nullable = false)
-    private Long favoriteId;*/
-
-    //Relation unidirectionnelle
-
+    //Relation unidirectionnelle vers Player
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
             property = "id")
     @JsonIdentityReference(alwaysAsId = true)
