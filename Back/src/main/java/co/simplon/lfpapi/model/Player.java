@@ -9,7 +9,6 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
 
-@JsonIgnoreProperties(value = {"evaluatedPlayer"})
 @Entity
 public class Player {
 
@@ -21,8 +20,8 @@ public class Player {
     @Column
     private String username;
 
-    @JsonIgnore
-    @ManyToMany (mappedBy = "players")
+    /*@JsonIgnore*/
+    @ManyToMany /*(mappedBy = "players")*/
     private Set<Session> sessions;
 
     @ManyToMany

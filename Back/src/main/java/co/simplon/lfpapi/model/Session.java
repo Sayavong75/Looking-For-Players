@@ -1,6 +1,9 @@
 package co.simplon.lfpapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -25,15 +28,16 @@ public class Session {
     @ManyToOne
     private Game game;
 
-    //Relation bidirectionnelle
-    @ManyToMany/*(mappedBy = "sessions")*/
+    //Relation bidirectionnelle vers Player.
+    // Session est l'esclave du maitre Player c'est pourquoi on met le mappedBy ici
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "id")
+    @JsonIdentityReference(alwaysAsId = true)
+    @ManyToMany (mappedBy = "sessions")
     private Set<Player> players;
 
-    //Relation unidirectionnelle
-    /*@JsonIgnore
-    @OneToMany
-    private Set<Rating> ratings;*/
-
+    //ACCESSORS
 
     public Long getId() {
         return id;
@@ -67,11 +71,4 @@ public class Session {
         this.players = players;
     }
 
-  /*  public Set<Rating> getRatings() {
-        return ratings;
-    }
-
-    public void setRatings(Set<Rating> ratings) {
-        this.ratings = ratings;
-    }*/
 }
