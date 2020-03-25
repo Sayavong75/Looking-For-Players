@@ -1,12 +1,9 @@
 import {Game} from './game';
-
-class player {
-}
+import {Player} from './player';
 
 export class Session {
   id: number;
   dateOfGamingSession: Date;
   game: Game;
-  players: player[];
-
+  players: Player[];
 }

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.*;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -20,7 +19,7 @@ public class Rating {
     @NotNull
     @Min(value = 0)
     @Max(value = 5)
-    private Integer ratingOfAPlayer;
+    private Integer rating;
 
     // Il faut disposer d'un joueur évaluateur et d'un joueur évalué
 
@@ -43,12 +42,12 @@ public class Rating {
         this.id = id;
     }
 
-    public Integer getRatingOfAPlayer() {
-        return ratingOfAPlayer;
+    public Integer getRating() {
+        return rating;
     }
 
-    public void setRatingOfAPlayer(Integer ratingOfAPlayer) {
-        this.ratingOfAPlayer = ratingOfAPlayer;
+    public void setRating(Integer ratingOfAPlayer) {
+        this.rating = ratingOfAPlayer;
     }
 
     public Player getEvaluatedPlayer() {
