@@ -13,8 +13,8 @@
   <tr *ngFor="let player of players">
     <td>{{player.id}}</td>
     <td>{{player.username}}</td>
-    <td><span *ngFor="let game of player.games">{{game.nameGame}}<br></span></td>
-    <td>{{player.favorite}}</td>
+    <td><span *ngFor="let game of player.games">{{game.name}}<br></span></td>
+    <td>{{player.favorites}}</td>
     <td><button [routerLink]="['/playerprofile', player.id]">Profil de <b>{{player.username}}</b></button></td>
   </tr>
   </tbody>

@@ -4,11 +4,19 @@
   <caption>Liste des jeux de {{player.username}}</caption>
   <tbody>
   <tr *ngFor="let game of player.games, let gameId = index">
-    <td>{{game.nameGame}}</td>
-    <td><img class="gameImageInTable" src="{{game.imageUrlGame}}"></td>
+    <td>{{game.name}}</td>
+    <td><img class="gameImageInTable" src="{{game.imageUrl}}"></td>
     <td><button (click)="updatePlayerProfile(gameId)">X</button>Supprimer le jeu</td> <!--# CSSS : Mettre la croix en gros et en rouge, le texte en dessous-->
   </tr>
   </tbody>
 </table>
+
+<div>Mes joueurs favoris :</div>
+<div *ngFor="let favorite of player.favorites">
+  {{getFavoritePlayerInformation(favorite.favoritePlayer)}}
+  </div>
+<br>
+<div>Vérification des données du tableau "Players"</div>
+<div *ngFor="let player of players, let playerIndex = index">Nom du joueur <b>{{playerIndex}}</b> dans la base "Players" = "<b>{{player.username}}</b>", qui possède l'id : <b>{{player.id}}</b></div>
 
 
