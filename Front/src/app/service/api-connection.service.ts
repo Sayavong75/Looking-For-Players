@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Player} from '../class/player';
+import {Game} from '../class/game';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,7 @@ export class ApiConnectionService {
     return this.http.put(`http://localhost:8080/api/players/${playerId}`, player);
   }
 
+/*  getGames(): Observable<Game[]> {
 
+  }*/
 }
