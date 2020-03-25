@@ -33,7 +33,7 @@ public class GameServiceImpl implements GameService {
         int pSize = (pageSize != null) ? pageSize : 50;
 
         // By default sort on game name
-        String sortingCriteria = "nameGame";
+        String sortingCriteria = "name";
 
         // If sorting criteria matches an aliment field name, then use it for sorting
         Field[] fields = Game.class.getDeclaredFields();
