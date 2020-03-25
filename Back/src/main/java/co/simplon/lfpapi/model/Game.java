@@ -18,10 +18,10 @@ public class Game {
     private Long idSteam;
 
     @Column(nullable = false)
-    private String nameGame;
+    private String name;
 
-    @Column(nullable = false, name = "img_url_game")
-    private String imageUrlGame;
+    @Column(nullable = false, name = "img_url")
+    private String imageUrl;
 
     @JsonIgnore
     @OneToMany
@@ -53,20 +53,20 @@ public class Game {
         this.idSteam = idSteam;
     }
 
-    public String getNameGame() {
-        return nameGame;
+    public String getName() {
+        return name;
     }
 
-    public void setNameGame(String nameGame) {
-        this.nameGame = nameGame;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getImageUrlGame() {
-        return imageUrlGame;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImageUrlGame(String imageUrlGame) {
-        this.imageUrlGame = imageUrlGame;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public Set<Session> getSessions() {
