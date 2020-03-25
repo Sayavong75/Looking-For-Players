@@ -21,7 +21,7 @@ public class FavoriteController {
     public FavoriteController(FavoriteService favoriteService) { this.favoriteService = favoriteService; }
 
     @GetMapping
-    public List<Favorite> get(){
+    public List<Favorite> getFavoritesList(){
         return this.favoriteService.getAllFavorites();
     }
 
