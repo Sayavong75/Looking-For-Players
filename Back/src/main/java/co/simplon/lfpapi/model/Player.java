@@ -1,15 +1,10 @@
 package co.simplon.lfpapi.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 @Entity
+
 public class Player {
 
     @Id
@@ -19,6 +14,7 @@ public class Player {
 
     @Column
     private String username;
+
 
     @ManyToMany
     private Set<Session> sessions;
@@ -31,8 +27,11 @@ public class Player {
     private Set<Favorite> favorites;
 
     // RELATION UNIDIRECTIONNELLE vers Rating
-    @OneToMany
-    private Set<Rating> ratings;
+    @OneToMany (mappedBy = "evaluatingPlayer")
+    private Set<Rating> givenRatings;
+
+    @OneToMany (mappedBy = "evaluatedPlayer")
+    private Set<Rating> receivedRatings;
 
     //GETTERS & SETTERS
 
@@ -76,12 +75,19 @@ public class Player {
         this.favorites = favorites;
     }
 
-    public Set<Rating> getRatings() {
-        return ratings;
+    public Set<Rating> getGivenRatings() {
+        return givenRatings;
     }
 
-    public void setRatings(Set<Rating> ratings) {
-        this.ratings = ratings;
+    public void setGivenRatings(Set<Rating> ratings) {
+        this.givenRatings = ratings;
     }
 
+    public Set<Rating> getReceivedRatings() {
+        return receivedRatings;
+    }
+
+    public void setReceivedRatings(Set<Rating> receivedRatings) {
+        this.receivedRatings = receivedRatings;
+    }
 }
