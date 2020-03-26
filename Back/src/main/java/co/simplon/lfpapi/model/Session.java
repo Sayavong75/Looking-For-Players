@@ -1,9 +1,6 @@
 package co.simplon.lfpapi.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -34,6 +31,7 @@ public class Session {
             generator = ObjectIdGenerators.PropertyGenerator.class,
             property = "id")
     @JsonIdentityReference(alwaysAsId = true)
+    @JsonProperty("playersId")
     @ManyToMany (mappedBy = "sessions")
     private Set<Player> players;
 
@@ -70,5 +68,4 @@ public class Session {
     public void setPlayers(Set<Player> players) {
         this.players = players;
     }
-
 }

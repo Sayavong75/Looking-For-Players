@@ -1,9 +1,6 @@
 package co.simplon.lfpapi.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -27,6 +24,7 @@ public class Favorite {
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
             property = "id")
     @JsonIdentityReference(alwaysAsId = true)
+    @JsonProperty("favoritePlayerId")
     @ManyToOne
     private Player favoritePlayer;
 

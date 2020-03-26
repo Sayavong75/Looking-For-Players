@@ -23,11 +23,20 @@ public class Rating {
 
     // Il faut disposer d'un joueur évaluateur et d'un joueur évalué
 
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "id")
+    @JsonIdentityReference(alwaysAsId = true)
+    @JsonProperty("evaluatingPlayerId")
+    @ManyToOne
+    private Player evaluatingPlayer;
+
     //EVALUATED PLAYER -- relation unidirectionnelle vers Player
     @JsonIdentityInfo(
             generator = ObjectIdGenerators.PropertyGenerator.class,
             property = "id")
     @JsonIdentityReference(alwaysAsId = true)
+    @JsonProperty("evaluatedPlayerId")
     @ManyToOne
     private Player evaluatedPlayer;
 
@@ -58,5 +67,11 @@ public class Rating {
         this.evaluatedPlayer = evaluatedPlayer;
     }
 
+    public Player getEvaluatingPlayer() {
+        return evaluatingPlayer;
+    }
 
+    public void setEvaluatingPlayer(Player evaluatingPlayer) {
+        this.evaluatingPlayer = evaluatingPlayer;
+    }
 }
