@@ -1,5 +1,6 @@
 <h2>Profil de {{player.username}} :</h2>
 
+<div class="player-profile-content">
 <table>
   <caption>Liste des jeux de {{player.username}}</caption>
   <tbody>
@@ -11,12 +12,38 @@
   </tbody>
 </table>
 
-<div>Mes joueurs favoris :</div>
-
-<div *ngFor="let favorite of favorites">
-  {{favorite.username}}
+<table>
+  <caption> Joueurs Favoris de {{player.username}}</caption>
+  <tbody>
+  <tr *ngFor="let favorite of favorites">
+    <td>{{favorite.username}}</td>
+  </tr>
+  </tbody>
+</table>
 </div>
 
+<div class="player-profile-sessions">
+  <table>
+    <caption>Sessions de {{player.username}}</caption>
+    <thead>
+    <tr>
+      <th>Numéro de session</th>
+      <th>Date de la session</th>
+      <th>Jeu</th>
+      <th>Participants</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><span>a compléter</span><input type="checkbox" [checked]=""></td>
+    </tr>
+    </tbody>
+    <tfoot><button>Créer une session</button></tfoot>
+  </table>
+</div>
 
 
 
