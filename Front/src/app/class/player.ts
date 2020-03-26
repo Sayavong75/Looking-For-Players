@@ -1,7 +1,8 @@
 import {Game} from './game';
 import {Favorite} from './favorite';
-import {Rating} from './rating';
+import {GivenRating} from './givenRating';
 import {Session} from './session';
+import {ReceivedRating} from './receivedRating';
 
 export class Player {
   id: number;
@@ -9,5 +10,6 @@ export class Player {
   sessions: Session[];
   games: Game[];
   favorites: Favorite[];
-  ratings: Rating[];
+  givenRatings: GivenRating[];
+  receivedRatings: ReceivedRating[];
 }
