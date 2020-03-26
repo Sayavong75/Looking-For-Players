@@ -5,5 +5,5 @@ export class Session {
   id: number;
   dateOfGamingSession: Date;
   game: Game;
-  players: Player[];
+  playersId: Player[];
 }

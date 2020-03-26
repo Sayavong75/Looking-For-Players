@@ -1,4 +1,4 @@
-export class GivenRating {
+export class ReceivedRating {
   id: number;
   rating: number;
   evaluatingPlayerId: number;

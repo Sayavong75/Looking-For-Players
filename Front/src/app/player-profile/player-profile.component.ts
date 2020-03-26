@@ -25,15 +25,16 @@ export class PlayerProfileComponent implements OnInit {
     this.connectionService.getOnePlayer(this.playerId).subscribe(
       player => {
         this.player = player;
+        console.log(this.player);
       }
     );
     this.connectionService.getPlayers().subscribe(
       players => {
         this.players = players;
-        for (let favorite of this.player.favorites) {
+        for (const favorite of this.player.favorites) {
           this.favoritesFromPlayers.push(favorite);
         }
-        this.getFavoriteUsername();
+        this.getFavorites();
       }
     );
   }
@@ -46,37 +47,16 @@ export class PlayerProfileComponent implements OnInit {
         console.log('Retour suite à la mise à jour de la fiche Joueur :');
         console.log(value);
       }, error => {
+        console.log('erreur de mise à jour :')
         console.log(error);
       }
     );
   }
 
-  getFavoritePlayerInformation(playerId) {
-    const res = [];
-    for (const player of this.players) {
-      console.log(this.players);
-      console.log(player.username);
-      console.log(player.id);
-      console.log(playerId);
-
-      if (player.id === playerId) {
-        console.log(true);
-      } else {
-        console.log(false);
-      }
-
-      if (player.id === playerId) {
-        /*res.push(player.username);*/
-        return player.username;
-      }
-    }
-    /*return res;*/
-  }
-
-  getFavoriteUsername() {
+  getFavorites() {
     for (let favorite of this.favoritesFromPlayers) {
       for (let player of this.players) {
-        if (favorite.favoritePlayer === player.id) {
+        if (favorite.favoritePlayerId === player.id) {
           this.favorites.push(player);
           console.log(player.username);
         }
