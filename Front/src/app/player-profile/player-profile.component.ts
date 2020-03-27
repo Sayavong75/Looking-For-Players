@@ -3,6 +3,7 @@ import {ApiConnectionService} from '../service/api-connection.service';
 import {Player} from '../class/player';
 import {ActivatedRoute} from '@angular/router';
 import {Favorite} from '../class/favorite';
+import {Session} from '../class/session';
 
 @Component({
   selector: 'app-player-profile',
@@ -16,6 +17,7 @@ export class PlayerProfileComponent implements OnInit {
   players: Player[] = [];
   favoritesFromPlayers: Favorite[] = [];
   favorites: Player[] = [];
+  sessions: Session[] = [];
 
   constructor(private connectionService: ApiConnectionService, private route: ActivatedRoute) {
   }
@@ -25,7 +27,6 @@ export class PlayerProfileComponent implements OnInit {
     this.connectionService.getOnePlayer(this.playerId).subscribe(
       player => {
         this.player = player;
-        console.log(this.player);
       }
     );
     this.connectionService.getPlayers().subscribe(
@@ -35,6 +36,11 @@ export class PlayerProfileComponent implements OnInit {
           this.favoritesFromPlayers.push(favorite);
         }
         this.getFavorites();
+      }
+    );
+    this.connectionService.getSessionsOfOnePlayer(this.playerId).subscribe(
+      sessions => {
+        this.sessions = sessions;
       }
     );
   }
@@ -47,16 +53,16 @@ export class PlayerProfileComponent implements OnInit {
         console.log('Retour suite à la mise à jour de la fiche Joueur :');
         console.log(value);
       }, error => {
-        console.log('erreur de mise à jour :')
+        console.log('erreur de mise à jour :');
         console.log(error);
       }
     );
   }
 
   getFavorites() {
-    for (let favorite of this.favoritesFromPlayers) {
-      for (let player of this.players) {
-        if (favorite.favoritePlayerId === player.id) {
+    for (const favorite of this.favoritesFromPlayers) {
+      for (const player of this.players) {
+        if (favorite.favoritePlayer === player.id) {
           this.favorites.push(player);
           console.log(player.username);
         }
@@ -64,6 +70,17 @@ export class PlayerProfileComponent implements OnInit {
     }
   }
 
+  getPlayersInOneSession(players) {
+    let res = [];
+    console.log(players);
+    for (let sessionPlayer of players) {
+      for (let player of this.players) {
+        if (player.id === sessionPlayer) {
+          res.push(player.username);
+        }
+      }
+    }
+    return res;
+  }
+
 }
-
-
