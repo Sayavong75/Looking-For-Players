@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -31,9 +32,8 @@ public class Session {
             generator = ObjectIdGenerators.PropertyGenerator.class,
             property = "id")
     @JsonIdentityReference(alwaysAsId = true)
-    @JsonProperty("playersId")
     @ManyToMany (mappedBy = "sessions")
-    private Set<Player> players;
+    private Set<Player> players = new HashSet<>();
 
     //ACCESSORS
 
@@ -67,5 +67,12 @@ public class Session {
 
     public void setPlayers(Set<Player> players) {
         this.players = players;
+    }
+
+    @JsonProperty("players")
+    public void setPlayersById (Set<Long> playersId){
+        for(Long playerId : playersId) {
+            this.players.add(new Player(playerId));
+        }
     }
 }
