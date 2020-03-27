@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Player} from '../class/player';
 import {Game} from '../class/game';
+import {Favorite} from '../class/favorite';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,16 @@ export class ApiConnectionService {
     return this.http.put(`http://localhost:8080/api/players/${playerId}`, player);
   }
 
-/*  getGames(): Observable<Game[]> {
+  // Saya
+  getFavorites(): Observable<Favorite[]> {
+    return this.http.get<Favorite[]>('http://localhost:8080/api/favorites');
+  }
 
-  }*/
+  getGames(): Observable<Game[]> {
+    return this.http.get<Game[]>('http://localhost:8080/api/games');
+    }
+
+  addPlayer(player): Observable<Player> {
+    return this.http.post<Player>('http://localhost:8080/api/players', player);
+  }
 }

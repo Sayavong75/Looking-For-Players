@@ -14,8 +14,13 @@
     <td>{{player.id}}</td>
     <td>{{player.username}}</td>
     <td><span *ngFor="let game of player.games">{{game.name}}<br></span></td>
-    <td>{{player.favorites}}</td>
+
+    <!--    <td>{{player.favorites}}</td>-->
+    <td><span *ngFor="let favorite of player.favorites">{{getFavoriteUsername(favorite.favoritePlayer)}} (date d'ajout : {{favorite.dateOfFavoritePlayerAdded | date : 'dd/MM/yy' }} à {{favorite.dateOfFavoritePlayerAdded | date : 'h:mm'}} )<br></span></td>
+
     <td><button [routerLink]="['/playerprofile', player.id]">Profil de <b>{{player.username}}</b></button></td>
+
   </tr>
   </tbody>
 </table>
+<div class="center-div"><button class="button" [routerLink]="['/playeradd']">Ajouter Joueur</button></div>

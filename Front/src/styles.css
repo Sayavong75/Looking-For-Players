@@ -115,5 +115,54 @@ td, th /* Toutes les cellules des tableaux... */
   margin-left: 0.5vw;
 }
 
+/*Saya*/
 
+.center-div,.player-add-div {
+  text-align: center;
+}
 
+div.block {
+  display:grid;
+  grid-template-columns: max-content max-content;
+  grid-gap:5px;
+}
+div.block label {
+  text-align:right;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+div.block label:after { content: ":"; }
+
+div.center-div
+{
+  margin: 0 auto;
+  padding: 20px;
+}
+
+div.player-add-div
+{
+  margin: 0 auto;
+  width: 400px;
+  height: 60px;
+  background-color: #ccc;
+  padding: 20px;
+}
+
+input {
+  width: 300px;
+}
+
+h1,h2 {
+  text-align: center;
+}
+
+.button, .popup {
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 4px;
+  padding: 4px 12px;
+}
+
+.button:hover {
+  background-color: dimgrey;
+  color: white;
+}

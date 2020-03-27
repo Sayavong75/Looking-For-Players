@@ -54,9 +54,9 @@ export class PlayerProfileComponent implements OnInit {
   }
 
   getFavorites() {
-    for (let favorite of this.favoritesFromPlayers) {
-      for (let player of this.players) {
-        if (favorite.favoritePlayerId === player.id) {
+    for (const favorite of this.favoritesFromPlayers) {
+      for (const player of this.players) {
+        if (favorite.favoritePlayer === player.id) {
           this.favorites.push(player);
           console.log(player.username);
         }

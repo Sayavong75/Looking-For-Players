@@ -13,6 +13,9 @@ import { FooterComponent } from './footer/footer.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import {HttpClientModule} from '@angular/common/http';
 import { PlayersListComponent } from './players-list/players-list.component';
+import {PlayerAddComponent} from './player-add/player-add.component';
+import {ReactiveFormsModule} from "@angular/forms";
+
 
 @NgModule({
   declarations: [
@@ -25,18 +28,21 @@ import { PlayersListComponent } from './players-list/players-list.component';
     SessionListComponent,
     FooterComponent,
     CalendarComponent,
-    PlayersListComponent
+    PlayersListComponent,
+    PlayerAddComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: '' , component: HomeComponent },
-      {path: 'playerprofile/:playerId' , component: PlayerProfileComponent},
-      {path: 'newsession' , component: NewSessionComponent},
-      {path: 'sessionsList' , component: SessionListComponent},
-      {path: 'playerslist' , component: PlayersListComponent}
-        ]),
-    HttpClientModule
+      {path: '', component: HomeComponent},
+      {path: 'playerprofile/:playerId', component: PlayerProfileComponent},
+      {path: 'newsession', component: NewSessionComponent},
+      {path: 'sessionsList', component: SessionListComponent},
+      {path: 'playerslist', component: PlayersListComponent},
+      {path: 'playeradd', component: PlayerAddComponent}
+    ]),
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
