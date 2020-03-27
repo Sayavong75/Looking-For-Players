@@ -27,11 +27,20 @@ public class Player {
     private Set<Favorite> favorites;
 
     // RELATION UNIDIRECTIONNELLE vers Rating
-    @OneToMany (mappedBy = "evaluatingPlayer")
+    @OneToMany (mappedBy = "evaluatingPlayer", cascade = CascadeType.ALL)
     private Set<Rating> givenRatings;
 
-    @OneToMany (mappedBy = "evaluatedPlayer")
+    @OneToMany (mappedBy = "evaluatedPlayer", cascade = CascadeType.ALL)
     private Set<Rating> receivedRatings;
+
+    // CONSTRUTORs
+    public Player() {
+    }
+        // constructeur permettant de faire le lien avec la classe Rating en passant un objet Player
+    public Player(Long id) {
+        this.id = id;
+    }
+
 
     //GETTERS & SETTERS
 

@@ -24,7 +24,6 @@ public class Favorite {
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
             property = "id")
     @JsonIdentityReference(alwaysAsId = true)
-    @JsonProperty("favoritePlayerId")
     @ManyToOne
     private Player favoritePlayer;
 
@@ -50,5 +49,10 @@ public class Favorite {
 
     public void setFavoritePlayer(Player favoritePlayer) {
         this.favoritePlayer = favoritePlayer;
+    }
+
+    @JsonProperty("favoritePlayer")
+    public void setFavoritePlayerById (Long favoritePlayerId){
+        this.favoritePlayer = new Player(favoritePlayerId);
     }
 }
