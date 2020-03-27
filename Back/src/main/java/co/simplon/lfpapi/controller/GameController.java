@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/games")
-@CrossOrigin("*")
+@CrossOrigin("http://localhost:4200")
 
 public class GameController {
 

@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {Player} from '../class/player';
 import {Game} from '../class/game';
 import {Favorite} from '../class/favorite';
+import {Session} from '../class/session';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class ApiConnectionService {
   constructor(private http: HttpClient) {
   }
 
-
+  // Player
   getPlayers(): Observable<Player[]> {
     return this.http.get<Player[]>('http://localhost:8080/api/players');
   }
@@ -38,4 +39,10 @@ export class ApiConnectionService {
   addPlayer(player): Observable<Player> {
     return this.http.post<Player>('http://localhost:8080/api/players', player);
   }
+
+  // Session
+  getSessionsOfOnePlayer(playerId): Observable<Session[]> {
+    return this.http.get<Session[]>(`http://localhost:8080/api/sessions/player/${playerId}`);
+  }
+
 }

@@ -1,7 +1,8 @@
 /*GLOBAL PAGE*/
-body{
+body {
   background-color: darkgoldenrod;
 }
+
 #page {
   min-height: 94vh;
   display: flex;
@@ -80,8 +81,8 @@ main {
 table {
   border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
   border: 1px solid black; /* auront une bordure de 1px */
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 td, th /* Toutes les cellules des tableaux... */
@@ -90,17 +91,41 @@ td, th /* Toutes les cellules des tableaux... */
   color: black;
   text-align: center;
   background-color: white;
-  padding:4px 10px;
+  padding: 4px 10px;
 }
+
+.img-table {
+  width: 153px;
+  height: 72px;
+}
+
+.img-game-session {
+  width: 38px;
+  height: 18px;
+  margin-left: 5px;
+}
+
+caption {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.btn-session {
+  margin-top: 10px;
+text-align: center;
+}
+
+
+
 
 
 /*FOOTER*/
 
-.footer{
+.footer {
   height: 5vh;
 }
 
-.footer-content{
+.footer-content {
   display: flex;
   flex-direction: row;
   justify-content: right;
@@ -108,7 +133,7 @@ td, th /* Toutes les cellules des tableaux... */
 
 }
 
-.guigui-logo{
+.guigui-logo {
   padding-top: 15px;
   width: 20px;
   align-self: baseline;

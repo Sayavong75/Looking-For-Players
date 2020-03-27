@@ -1,25 +1,37 @@
 <h2>Profil de {{player.username}} :</h2>
 
 <div class="player-profile-content">
-<table>
-  <caption>Liste des jeux de {{player.username}}</caption>
-  <tbody>
-  <tr *ngFor="let game of player.games, let gameId = index">
-    <td>{{game.name}}</td>
-    <td><img class="gameImageInTable" src="{{game.imageUrl}}"></td>
-    <td><button (click)="updatePlayerProfile(gameId)">X</button>Supprimer le jeu</td> <!--# CSSS : Mettre la croix en gros et en rouge, le texte en dessous-->
-  </tr>
-  </tbody>
-</table>
+  <table>
+    <caption>Liste des jeux de {{player.username}}</caption>
+    <tbody>
+    <tr *ngFor="let game of player.games, let gameId = index">
+      <td>{{game.name}}</td>
+      <td><img class="img-table" src="{{game.imageUrl}}"></td>
+      <td>
+        <button (click)="updatePlayerProfile(gameId)">X</button>
+        Supprimer le jeu
+      </td> <!--# CSSS : Mettre la croix en gros et en rouge, le texte en dessous-->
+    </tr>
+    </tbody>
+  </table>
 
-<table>
-  <caption> Joueurs Favoris de {{player.username}}</caption>
-  <tbody>
-  <tr *ngFor="let favorite of favorites">
-    <td>{{favorite.username}}</td>
-  </tr>
-  </tbody>
-</table>
+  <table>
+    <caption> Joueurs Favoris de {{player.username}}</caption>
+    <thead>
+    <tr>
+      <td>Nom</td>
+      <td>Favori depuis...</td>
+      <td>Effacer</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let favorite of favorites, let index = index">
+      <td>{{favorite.username}}</td>
+      <td></td>
+      <td><button>X</button></td> <!--action à ajouter-->
+    </tr>
+    </tbody>
+  </table>
 </div>
 
 <div class="player-profile-sessions">
@@ -34,15 +46,18 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><span>a compléter</span><input type="checkbox" [checked]=""></td>
+    <tr *ngFor="let session of sessions">
+      <td>{{session.id}}</td>
+      <td>{{session.dateOfGamingSession | date: 'dd/MM/yyyy'}} à {{session.dateOfGamingSession | date: 'hh:mm'}}</td>
+      <td>{{session.game.name}}<img class="img-game-session" src="{{session.game.imageUrl}}"></td>
+      <td><span *ngFor="let player of getPlayersInOneSession(session.players)">{{player}}<br></span></td>
     </tr>
     </tbody>
-    <tfoot><button>Créer une session</button></tfoot>
   </table>
+  <div class="btn-session">
+    <button>Créer une session</button>
+    <button>Rejoindre une session</button>
+  </div>
 </div>
 
 
