@@ -83,4 +83,24 @@ export class PlayerProfileComponent implements OnInit {
     return res;
   }
 
+  getDateOfAddingInFavorites(favoritePlayerId) {
+    for (let favorite of this.player.favorites) {
+      if (favorite.favoritePlayer === favoritePlayerId) {
+        return favorite.dateOfFavoritePlayerAdded;
+      }
+    }
+  }
+
+  public get hasGames(): boolean {
+    return !!this.player.games;
+  }
+
+  public get hasFavorites(): boolean {
+    return !!this.player.favorites;
+  }
+
+  public get hasSessions(): boolean {
+    return !!this.player.sessions;
+  }
+
 }

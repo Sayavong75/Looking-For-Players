@@ -109,6 +109,13 @@ thead{
   margin-left: 5px;
 }
 
+.table-title {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-size: large;
+  text-align: center;
+}
+
 caption {
   margin-bottom: 10px;
   margin-top: 20px;
@@ -126,7 +133,7 @@ caption {
 }
 
 .btn-session-block {
-  margin-top: 10px;
+  margin-top: 15px;
   text-align: center;
 }
 
@@ -144,6 +151,12 @@ caption {
   height: 40px;
   width: 40px;
   color: red;
+}
+
+.no-content-msg {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 15px;
 }
 
 /*FOOTER*/
