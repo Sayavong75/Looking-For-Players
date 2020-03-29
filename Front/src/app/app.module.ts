@@ -14,7 +14,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import {HttpClientModule} from '@angular/common/http';
 import { PlayersListComponent } from './players-list/players-list.component';
 import {PlayerAddComponent} from './player-add/player-add.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -42,7 +42,8 @@ import {ReactiveFormsModule} from "@angular/forms";
       {path: 'playeradd', component: PlayerAddComponent}
     ]),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
