@@ -10,22 +10,26 @@ import { FormBuilder } from '@angular/forms';
 export class PlayerAddComponent implements OnInit {
 
   playerForm;
+  txtValue: string = null;
 
   constructor(
     private formBuilder: FormBuilder,
     private connectionService: ApiConnectionService
-    )
-    {
+    ) {
       this.playerForm = this.formBuilder.group({
         username: ''
       });
   }
     onSubmit(player) {
-      // window.alert('Le joueur a été ajouté ' + player.username);
-      this.connectionService.addPlayer(player).subscribe(savePlayer => console.log(savePlayer));
-      this.playerForm.reset();
+      this.txtValue = player.username;
+      if (this.txtValue == null) {
+        window.alert('Tu as oublié d\'indiquer ton pseudo de player !');
+      } else {
+        this.connectionService.addPlayer(player).subscribe(savePlayer => console.log(savePlayer));
+        this.playerForm.reset();
+        window.alert('Player ' + player.username + ' a été ajouté(e)');
+      }
     }
-
 
   ngOnInit() {
   }

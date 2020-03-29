@@ -167,7 +167,7 @@ caption {
   margin-left: 0.5vw;
 }
 
-/*Saya*/
+/*SAYA*/
 
 .center-div,.player-add-div {
   text-align: center;
@@ -193,7 +193,7 @@ div.center-div
 div.player-add-div
 {
   margin: 0 auto;
-  width: 400px;
+  width: 440px;
   height: 60px;
   background-color: #ccc;
   padding: 20px;
