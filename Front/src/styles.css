@@ -126,6 +126,7 @@ caption {
 .btn {
   border-radius: 5px;
   font-weight: bold;
+  min-height: 30px;
 }
 
 .btn:hover {
