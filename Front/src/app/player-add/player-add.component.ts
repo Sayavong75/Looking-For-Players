@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiConnectionService} from '../service/api-connection.service';
 import {FormBuilder} from '@angular/forms';
-import {Player} from "../class/player";
+import {Player} from '../class/player';
 
 @Component({
   selector: 'app-player-add',

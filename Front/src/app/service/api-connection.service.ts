@@ -45,4 +45,7 @@ export class ApiConnectionService {
     return this.http.get<Session[]>(`http://localhost:8080/api/sessions/player/${playerId}`);
   }
 
+  addSession(session): Observable<Session> {
+    return this.http.post<Session>('http://localhost:8080/api/sessions', session);
+  }
 }

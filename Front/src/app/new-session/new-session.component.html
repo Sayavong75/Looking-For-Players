@@ -4,21 +4,22 @@
   <div class="session-add-div">
     <div class="block">
       <label for="username">Pseudo du Joueur </label>
-      <input id="username" type="text" formControlName="username" disabled>
+      <input id="username" type="text" formControlName="username">
       <label>Liste des jeux </label>
-      <select formControlName="gameName">
+      <select formControlName="game">
         <option value="">--- Selectionner un jeu ---</option>
         <option *ngFor="let game of games; let i = index" [ngValue]="game">{{game.name}}</option>
       </select>
-      <label>Date </label>
-      <input id="dateSession" type="text" formControlName="dateSession" placeholder="In progress...">
+      <label for="dateSession">Date </label>
+      <input type="date" id="dateSession" formControlName="dateSession" name="trip-start"
+             min="2020-01-01"
+             max="2020-12-31"
+             [(ngModel)]="dateValue"
+             required>
     </div>
-
     <br>
     <button class="button" type="submit">Ajouter</button>
     <button class="button" type="reset">Reset</button>
   </div>
-
 </form>
-
 <div class="center-div"><button class="button" value="Retour" Onclick="history.go(-1)">Retour</button></div>

@@ -12,26 +12,19 @@ import {Session} from '../class/session';
   styleUrls: ['./new-session.component.css']
 })
 export class NewSessionComponent implements OnInit {
-  theDate: any;
   sessionForm;
   session: Session;
   game: Game;
   games: Game[];
   player: Player;
-  players: Player[];
-  favorite: Favorite;
-  favorites: Favorite[];
-  gameName;
-  public minDate: Date = new Date(Date.now());
-  public maxDate: Date = new Date ('12/31/2020');
-  public value: Date = new Date (Date.now());
+  dateValue: Date = new Date();
   usernameValue: string = null;
 
   constructor(private connectionService: ApiConnectionService, private formBuilder: FormBuilder) {
     this.sessionForm = this.formBuilder.group({
-      username: '',
-      gameName: '',
-      dateSession: ''
+      dateSession: '',
+      game: '',
+      player: '',
     });
   }
 
@@ -42,6 +35,13 @@ export class NewSessionComponent implements OnInit {
   }
 
   onSubmit(session) {
+    this.dateValue = session.dateSession;
     console.log(session);
+    // console.log('date : ' + this.dateValue);
+    // this.connectionService.addSession(session).subscribe(
+    //   saveSession => {
+    //     console.log(saveSession);
+    //     this.sessionForm.reset();
+    //   });
   }
 }
