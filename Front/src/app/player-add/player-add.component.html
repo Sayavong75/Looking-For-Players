@@ -1,14 +1,13 @@
 <h2>Ajout d'un joueur</h2>
 
-<form [formGroup]="playerForm" (ngSubmit)="onSubmit(playerForm.value)" id="myForm">
+<form [formGroup]="playerForm" (ngSubmit)="onSubmit(playerForm.value)">
   <div class="player-add-div">
     <div class="block">
-      <label for="username">Pseudo du Joueur</label>
+      <label for="username">Pseudo du Joueur </label>
       <input id="username" type="text" formControlName="username" placeholder=' Entrer votre pseudo de joueur' [(ngModel)]="txtValue">
     </div>
     <br>
     <button class="button" type="submit">Ajouter</button>
-    &nbsp
     <button class="button" type="reset">Reset</button>
   </div>
 </form>
