@@ -1,5 +1,7 @@
 <h2>Profil de {{player.username}} :</h2>
 
+
+<!-- Tableau liste des jeux -->
 <div class="player-profile-content">
   <table>
     <caption>Liste des jeux de {{player.username}}</caption>
@@ -8,13 +10,13 @@
       <td>{{game.name}}</td>
       <td><img class="img-table" src="{{game.imageUrl}}"></td>
       <td>
-        <button (click)="updatePlayerProfile(gameId)">X</button>
-        Supprimer le jeu
+        <button class="btn btn-game-delete" (click)="updatePlayerProfile(gameId)">X</button>
       </td> <!--# CSSS : Mettre la croix en gros et en rouge, le texte en dessous-->
     </tr>
     </tbody>
   </table>
 
+  <!-- Tableau des joueurs favoris -->
   <table>
     <caption> Joueurs Favoris de {{player.username}}</caption>
     <thead>
@@ -28,12 +30,13 @@
     <tr *ngFor="let favorite of favorites, let index = index">
       <td>{{favorite.username}}</td>
       <td></td>
-      <td><button>X</button></td> <!--action à ajouter-->
+      <td><button class="btn-favorite-action btn">X</button></td> <!--action à ajouter-->
     </tr>
     </tbody>
   </table>
 </div>
 
+<!-- Tableau des sessions du joueur -->
 <div class="player-profile-sessions">
   <table>
     <caption>Sessions de {{player.username}}</caption>
@@ -54,9 +57,9 @@
     </tr>
     </tbody>
   </table>
-  <div class="btn-session">
-    <button>Créer une session</button>
-    <button>Rejoindre une session</button>
+  <div class="btn-session-block">
+    <button class="btn-session btn">Créer une session</button>
+    <button class="btn-session btn">Rejoindre une session</button>
   </div>
 </div>
 
