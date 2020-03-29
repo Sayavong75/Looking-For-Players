@@ -64,7 +64,6 @@ export class PlayerProfileComponent implements OnInit {
       for (const player of this.players) {
         if (favorite.favoritePlayer === player.id) {
           this.favorites.push(player);
-          console.log(player.username);
         }
       }
     }
@@ -72,7 +71,6 @@ export class PlayerProfileComponent implements OnInit {
 
   getPlayersInOneSession(players) {
     let res = [];
-    console.log(players);
     for (let sessionPlayer of players) {
       for (let player of this.players) {
         if (player.id === sessionPlayer) {
@@ -92,15 +90,15 @@ export class PlayerProfileComponent implements OnInit {
   }
 
   public get hasGames(): boolean {
-    return !!this.player.games;
+    return this.player.games.length !== 0;
   }
 
   public get hasFavorites(): boolean {
-    return !!this.player.favorites;
+    return this.player.favorites.length !== 0;
   }
 
   public get hasSessions(): boolean {
-    return !!this.player.sessions;
+    return this.player.sessions.length !== 0;
   }
 
 }
