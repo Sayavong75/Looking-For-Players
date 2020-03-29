@@ -75,10 +75,12 @@
     <div class="no-content-msg">{{player.username}} n'est encore inscrit à aucune session !</div>
   </ng-container>
   <div class="btn-session-block">
-    <button class="btn-session btn">Créer une session</button>
+    <button class="btn-session btn" [routerLink]="['/newsession']">Créer une session</button>
     <button class="btn-session btn">Rejoindre une session</button>
   </div>
 </div>
+
+
 
 
 

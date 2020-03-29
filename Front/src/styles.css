@@ -182,7 +182,7 @@ caption {
 
 /*SAYA*/
 
-.center-div,.player-add-div {
+.center-div,.player-add-div,.session-add-div {
   text-align: center;
 }
 
@@ -212,6 +212,14 @@ div.player-add-div
   padding: 20px;
 }
 
+div.session-add-div
+{
+  margin: 0 auto;
+  width: 440px;
+  height: 160px;
+  background-color: #ccc;
+  padding: 20px;
+}
 input {
   width: 300px;
 }
@@ -220,11 +228,12 @@ h1,h2 {
   text-align: center;
 }
 
-.button, .popup {
+.button {
   cursor: pointer;
   transition-duration: 0.4s;
   border-radius: 4px;
   padding: 4px 12px;
+  margin: 5px;
 }
 
 .button:hover {

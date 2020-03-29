@@ -1,1 +1,24 @@
-<p>new-session works!</p>
+<h2>Créer une session</h2>
+
+<form [formGroup]="sessionForm" (ngSubmit)="onSubmit(sessionForm.value)">
+  <div class="session-add-div">
+    <div class="block">
+      <label for="username">Pseudo du Joueur </label>
+      <input id="username" type="text" formControlName="username" disabled>
+      <label>Liste des jeux </label>
+      <select formControlName="gameName">
+        <option value="">--- Selectionner un jeu ---</option>
+        <option *ngFor="let game of games; let i = index" [ngValue]="game">{{game.name}}</option>
+      </select>
+      <label>Date </label>
+      <input id="dateSession" type="text" formControlName="dateSession" placeholder="In progress...">
+    </div>
+
+    <br>
+    <button class="button" type="submit">Ajouter</button>
+    <button class="button" type="reset">Reset</button>
+  </div>
+
+</form>
+
+<div class="center-div"><button class="button" value="Retour" Onclick="history.go(-1)">Retour</button></div>
