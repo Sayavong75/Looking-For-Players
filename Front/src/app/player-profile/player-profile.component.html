@@ -3,8 +3,9 @@
 
 <!-- Tableau liste des jeux -->
 <div class="player-profile-content">
+  <h3 class="table-title">Liste des jeux de {{player.username}}</h3>
+  <ng-container *ngIf="hasGames">
   <table>
-    <caption>Liste des jeux de {{player.username}}</caption>
     <tbody>
     <tr *ngFor="let game of player.games, let gameId = index">
       <td>{{game.name}}</td>
@@ -15,48 +16,64 @@
     </tr>
     </tbody>
   </table>
+  </ng-container>
+  <ng-container *ngIf="!hasGames">
+    <div class="no-content-msg">{{player.username}} n'a pas encore de jeux !</div>
+  </ng-container>
 
   <!-- Tableau des joueurs favoris -->
-  <table>
-    <caption> Joueurs Favoris de {{player.username}}</caption>
-    <thead>
-    <tr>
-      <td>Nom</td>
-      <td>Favori depuis...</td>
-      <td>Effacer</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let favorite of favorites, let index = index">
-      <td>{{favorite.username}}</td>
-      <td></td>
-      <td><button class="btn-favorite-action btn">X</button></td> <!--action à ajouter-->
-    </tr>
-    </tbody>
-  </table>
+  <h3 class="table-title">Joueurs Favoris de {{player.username}}</h3>
+  <ng-container *ngIf="hasFavorites">
+    <table>
+      <thead>
+      <tr>
+        <td>Nom</td>
+        <td>Favori depuis le</td>
+        <td>Effacer</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let favorite of favorites, let index = index">
+        <td>{{favorite.username}}</td>
+        <td>{{getDateOfAddingInFavorites(favorite.id) | date: 'dd/MM/yyyy'}}</td>
+        <td>
+          <button class="btn-favorite-action btn">X</button>
+        </td> <!--action à ajouter-->
+      </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ng-container *ngIf="!hasFavorites">
+    <div class="no-content-msg">{{player.username}} n'a pas encore de favoris !</div>
+  </ng-container>
 </div>
 
 <!-- Tableau des sessions du joueur -->
 <div class="player-profile-sessions">
-  <table>
-    <caption>Sessions de {{player.username}}</caption>
-    <thead>
-    <tr>
-      <th>Numéro de session</th>
-      <th>Date de la session</th>
-      <th>Jeu</th>
-      <th>Participants</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let session of sessions">
-      <td>{{session.id}}</td>
-      <td>{{session.dateOfGamingSession | date: 'dd/MM/yyyy'}} à {{session.dateOfGamingSession | date: 'hh:mm'}}</td>
-      <td>{{session.game.name}}<img class="img-game-session" src="{{session.game.imageUrl}}"></td>
-      <td><span *ngFor="let player of getPlayersInOneSession(session.players)">{{player}}<br></span></td>
-    </tr>
-    </tbody>
-  </table>
+  <h3 class="table-title">Sessions de {{player.username}}</h3>
+  <ng-container *ngIf="hasSessions">
+    <table>
+      <thead>
+      <tr>
+        <th>Numéro de session</th>
+        <th>Date de la session</th>
+        <th>Jeu</th>
+        <th>Participants</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let session of sessions">
+        <td>{{session.id}}</td>
+        <td>{{session.dateOfGamingSession | date: 'dd/MM/yyyy'}} à {{session.dateOfGamingSession | date: 'hh:mm'}}</td>
+        <td>{{session.game.name}}<img class="img-game-session" src="{{session.game.imageUrl}}"></td>
+        <td><span *ngFor="let player of getPlayersInOneSession(session.players)">{{player}}<br></span></td>
+      </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ng-container *ngIf="!hasSessions">
+    <div class="no-content-msg">{{player.username}} n'est encore inscrit à aucune session !</div>
+  </ng-container>
   <div class="btn-session-block">
     <button class="btn-session btn">Créer une session</button>
     <button class="btn-session btn">Rejoindre une session</button>
