@@ -94,6 +94,10 @@ td, th /* Toutes les cellules des tableaux... */
   padding: 4px 10px;
 }
 
+thead{
+  font-weight: bold;
+}
+
 .img-table {
   width: 153px;
   height: 72px;
@@ -108,16 +112,39 @@ td, th /* Toutes les cellules des tableaux... */
 caption {
   margin-bottom: 10px;
   margin-top: 20px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.btn {
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: grey;
+}
+
+.btn-session-block {
+  margin-top: 10px;
+  text-align: center;
 }
 
 .btn-session {
-  margin-top: 10px;
-text-align: center;
+  width: 200px;
+  height: 25px;
+  margin: 0 10px;
 }
 
+.btn-favorite-action {
+  color: red;
+}
 
-
-
+.btn-game-delete {
+  height: 40px;
+  width: 40px;
+  color: red;
+}
 
 /*FOOTER*/
 
