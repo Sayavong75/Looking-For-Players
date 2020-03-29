@@ -1,9 +1,12 @@
 package co.simplon.lfpapi.service;
 
+import co.simplon.lfpapi.model.Favorite;
 import co.simplon.lfpapi.model.Game;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import co.simplon.lfpapi.exception.EntityNotFoundException;
+
+import java.util.List;
 
 
 @Service
@@ -16,7 +19,7 @@ public interface GameService {
 //     */
 //    List<Game> getGames();
 
-    /**
+    /*
      * Game list retrieval.
      *
      * @param pageNumber the page number to get
@@ -25,7 +28,9 @@ public interface GameService {
      * @param direction  the sorting direction
      * @return a page object with aliments
      */
-    Page<Game> getGames(Integer pageNumber, Integer pageSize, String criteria, String direction);
+//    Page<Game> getGames(Integer pageNumber, Integer pageSize, String criteria, String direction);
+
+    List<Game> getGames();
 
     Game addGame(Game gameToAdd);
 
