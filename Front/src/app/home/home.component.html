@@ -13,7 +13,7 @@
 <br>
 
 <div>
-  <table>
+<!--  <table>
     <tr>
       <th> Id </th>
       <th> Image du Jeu</th>
@@ -34,6 +34,25 @@
     </tr>
 
 
+  </table>-->
+<h3 class="table-title">Les principales sessions à venir</h3>
+  <table>
+    <thead>
+    <tr>
+      <th>N° session</th>
+      <th>Jeu</th>
+      <th>Image</th>
+      <th>Nb de participants</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let topSession of incommingSessions">
+      <td>{{topSession.id}}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tbody>
   </table>
 
 </div>

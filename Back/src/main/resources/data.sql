@@ -18,8 +18,8 @@ insert into game (id, id_steam, name, img_url) values (nextval('game_id_seq'), 3
 insert into game (id, id_steam, name, img_url) values (nextval('game_id_seq'), 252490, 'Rust', 'https://steamcdn-a.akamaihd.net/steam/apps/252490/header.jpg?t=1579783966');
 insert into game (id, id_steam, name, img_url) values (nextval('game_id_seq'), 238960, 'Path of Exile', 'https://steamcdn-a.akamaihd.net/steam/apps/238960/header.jpg?t=1584387270');
 
-insert into session (id, date_of_gaming_session, game_id) values (nextval('session_id_seq'),'04/03/2020',1);
-insert into session (id, date_of_gaming_session, game_id) values (nextval('session_id_seq'),'18/02/2020',3);
+insert into session (id, date_of_gaming_session, game_id) values (nextval('session_id_seq'),'04/04/2020',1);
+insert into session (id, date_of_gaming_session, game_id) values (nextval('session_id_seq'),'18/05/2020',3);
 
 insert into player_sessions (players_id, sessions_id) values (1,1);
 insert into player_sessions (players_id, sessions_id) values (2,1);
