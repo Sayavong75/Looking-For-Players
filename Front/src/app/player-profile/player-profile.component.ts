@@ -90,15 +90,15 @@ export class PlayerProfileComponent implements OnInit {
   }
 
   public get hasGames(): boolean {
-    return this.player.games.length !== 0;
+    return (this.player.games && this.player.games.length !== 0);
   }
 
   public get hasFavorites(): boolean {
-    return this.player.favorites.length !== 0;
+    return (this.player.favorites && this.player.favorites.length !== 0);
   }
 
   public get hasSessions(): boolean {
-    return this.player.sessions.length !== 0;
+    return (this.player.sessions && this.player.sessions.length !== 0);
   }
 
 }
