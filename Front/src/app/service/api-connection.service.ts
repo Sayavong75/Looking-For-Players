@@ -27,18 +27,19 @@ export class ApiConnectionService {
     return this.http.put(`http://localhost:8080/api/players/${playerId}`, player);
   }
 
-  // Saya
+  addPlayer(player): Observable<Player> {
+    return this.http.post<Player>('http://localhost:8080/api/players', player);
+  }
+
+  // Favori
   getFavorites(): Observable<Favorite[]> {
     return this.http.get<Favorite[]>('http://localhost:8080/api/favorites');
   }
 
+  // Game
   getGames(): Observable<Game[]> {
     return this.http.get<Game[]>('http://localhost:8080/api/games');
     }
-
-  addPlayer(player): Observable<Player> {
-    return this.http.post<Player>('http://localhost:8080/api/players', player);
-  }
 
   // Session
   getSessionsOfOnePlayer(playerId): Observable<Session[]> {
