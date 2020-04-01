@@ -153,6 +153,18 @@ caption {
   color: red;
 }
 
+.btn-session-add {
+  width: 100px;
+  height: 25px;
+  margin: 0 10px;
+}
+
+.btn-player-add {
+  width: 100px;
+  height: 25px;
+  margin: 0 10px;
+}
+
 .no-content-msg {
   text-align: center;
   font-style: italic;
@@ -180,29 +192,25 @@ caption {
   margin-left: 0.5vw;
 }
 
-/*SAYA*/
-
+/* Alignement Centre des div player-add, session-add*/
 .center-div,.player-add-div,.session-add-div {
   text-align: center;
+    margin: 0 auto;
+    padding: 20px;
 }
 
+/* Bloc des formulaires player-add, session-add*/
 div.block {
   display:grid;
   grid-template-columns: max-content max-content;
   grid-gap:5px;
 }
-div.block label {
+div.block label { /* */
   text-align:right;
-  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 div.block label:after { content: ":"; }
 
-div.center-div
-{
-  margin: 0 auto;
-  padding: 20px;
-}
-
+/* Définition de l'espace des formulaires player-add, session-add*/
 div.player-add-div
 {
   margin: 0 auto;
@@ -216,7 +224,7 @@ div.session-add-div
 {
   margin: 0 auto;
   width: 440px;
-  height: 160px;
+  height: 120px;
   background-color: #ccc;
   padding: 20px;
 }
@@ -224,10 +232,12 @@ input {
   width: 300px;
 }
 
-h1,h2 {
+/* Alignement Centre des titres des vues player-add, session-add*/
+app-player-add h2, app-new-session h2 {
   text-align: center;
 }
 
+/* Test mise en forme button
 .button {
   cursor: pointer;
   transition-duration: 0.4s;
@@ -240,3 +250,4 @@ h1,h2 {
   background-color: dimgrey;
   color: white;
 }
+ */

@@ -11,7 +11,6 @@ import {Session} from '../class/session';
   styleUrls: ['./player-profile.component.css']
 })
 export class PlayerProfileComponent implements OnInit {
-
   player: Player = new Player();
   playerId;
   players: Player[] = [];
